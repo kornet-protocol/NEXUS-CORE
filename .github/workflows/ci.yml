@@ -1,0 +1,86 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  python-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install flake8
+      - run: flake8 core-engine/ validators/ identity-zkp/ scripts/
+
+  python-syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python3 -m py_compile core-engine/genesis_protocol.py
+      - run: python3 -m py_compile core-engine/reputation_decay.py
+      - run: python3 -m py_compile core-engine/graceful_degradation.py
+      - run: python3 -m py_compile core-engine/entropy_filter.py
+      - run: python3 -m py_compile validators/social_awakening.py
+      - run: python3 -m py_compile validators/eco_bio_vision.py
+      - run: python3 -m py_compile validators/infrastructure_scan.py
+      - run: python3 -m py_compile validators/science_peer_review.py
+      - run: python3 -m py_compile validators/dispute_arbiter.py
+      - run: python3 -m py_compile identity-zkp/web_of_trust.py
+      - run: python3 -m py_compile scripts/deploy_purge.py
+      - run: python3 -m py_compile core-engine/serve.py
+      - run: python3 -m py_compile core-engine/production_config.py
+      - run: python3 -m py_compile core-engine/persistence.py
+      - run: python3 -m py_compile core-engine/logging.py
+      - run: python3 -m py_compile core-engine/exceptions.py
+      - run: python3 -m unittest discover -s tests -v
+
+  rust-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-rust@v1
+        with:
+          rust-version: stable
+      - run: rustc --version
+      - run: cargo --version
+      - run: cd core-engine && cargo check
+      - run: cd identity-zkp && cargo check
+
+  go-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.22"
+      - run: go version
+      - run: cd iot-depin-network && go build ./...
+      - run: cd iot-depin-network && go test ./...
+
+  firmware-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install platformio
+      - run: pio run --project-dir iot-depin-network
+
+  markdown-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: npm install -g markdownlint-cli
+      - run: markdownlint "**/*.md"

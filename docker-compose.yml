@@ -1,0 +1,79 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: nexus
+      POSTGRES_PASSWORD: nexus
+      POSTGRES_DB: nexus_core
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U nexus"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  nexus-core:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      NEXUS_ENV: production
+      NEXUS_DB_PATH: /app/data/nexus_state.db
+      NEXUS_LOG_LEVEL: INFO
+      NEXUS_VALIDATOR_API: http://telemetry-aggregator:9090
+      DATABASE_URL: postgresql://nexus:nexus@postgres:5432/nexus_core
+      REDIS_URL: redis://redis:6379/0
+    volumes:
+      - nexus_data:/app/data
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  telemetry-aggregator:
+    build:
+      context: ./iot-depin-network
+      dockerfile: Dockerfile.go
+    restart: unless-stopped
+    ports:
+      - "9090:9090"
+    environment:
+      VALIDATOR_ENDPOINT: http://nexus-core:8080/verify
+    depends_on:
+      nexus-core:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9090/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  postgres_data:
+  redis_data:
+  nexus_data:

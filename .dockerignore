@@ -1,0 +1,13 @@
+.git
+.github
+docs
+smart-contracts/out
+__pycache__
+*.pyc
+.pytest_cache
+node_modules
+target
+.idea
+.vscode
+*.swp
+*.swo

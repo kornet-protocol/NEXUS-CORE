@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+.env
+*.egg-info/
+dist/
+build/
+.pio/
+*.exe
+
+# Rust
+target/
+Cargo.lock
+
+# Node
+node_modules/
+package-lock.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Secrets
+*.pem
+*.key
+.env.local
+.env.*.local
+
+# Build artifacts
+*.o
+*.a
+*.so
+*.dylib

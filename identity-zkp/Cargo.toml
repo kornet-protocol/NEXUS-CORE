@@ -1,0 +1,15 @@
+[package]
+name = "nexus-zkp"
+version = "0.1.2"
+edition = "2021"
+authors = ["NEXUS-CORE Contributors"]
+description = "NEXUS ZK Proof Verifier"
+
+[dependencies]
+bellman = "0.14"
+rand = "0.8"
+serde = { version = "1.0", features = ["derive"] }
+pairing = "0.21"
+
+[dev-dependencies]
+criterion = "0.5"
