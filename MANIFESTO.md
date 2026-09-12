@@ -1,20 +1,10 @@
-# МАНИФЕСТ NEXUS-CORE | NEXUS-CORE MANIFESTO
+# NEXUS-CORE MANIFESTO
 
-## Против бюрократии. Против капиталистического обрубка. За живую цивилизацию.
 ## Against Bureaucracy. Against Capitalist Carcass. For Living Civilization.
 
 ---
 
-## ЧАСТЬ 1. ДИАГНОЗ | PART 1. DIAGNOSIS
-
-Сатоши, неужели ты не предполагал, что тупорылые банки и огромные денежные мешки просто вложатся в Биткоин и захватят его?
-
-Они вложились. Они захватили. Они превратили идею децентрализации в новый вид спекулятивного капитализма: бесполезные мем-коины, бессмысленные NFT, DeFi как очередные финансовые пирамиды, создающие новые слои пафоса и бесконечных комиссий.
-
-Капитализм не избавился от бюрократии. Он породил новую бюрократию: бюрократию смарт-контрактов, бюрократию спекулятивных токенов, бюрократию протоколов, которые ничего не создают в физическом мире, а только выкачивают соки из людей.
-
-Мы живём в болоте. Хренову тысячу лет одного и того же болота. Каждый божий день — одни и те же цепи:
-Раб → Работа → Деньги → Долг → Ипотечный рынок → Кредит → Смерть в 60 лет от инфаркта
+## PART 1. DIAGNOSIS
 
 Didn't Satoshi think that dumb banks and giant money bags would simply invest in Bitcoin and take it over?
 
@@ -27,20 +17,7 @@ Worker → Labor → Money → Debt → Mortgage Market → Credit → Death at 
 
 ---
 
-## ЧАСТЬ 2. СИСТЕМА | PART 2. THE SYSTEM
-
-Дегенеративный капитализм создал среду, которая наказывает за созидание:
-- Ученик, который пишет картину — «Это не бизнес-план».
-- Учитель, отдающий душу детям — «Ты мало зарабатываешь, ты неудачник».
-- Инженер, строящий очиститель воды — «Зачем ты делаешь это бесплатно?».
-
-Система поощряет паразитизм: перепродать, сдать в аренду, надуть пузырь, кутить на проценты. Система ненавидит чистое созидание, потому что настоящее созидание не приносит быстрой прибыли тем, кто сам ничего не производит.
-
-Мы заменяем капитализм Фазовой Экономикой, где:
-```
-Ценность = Польза × Усилие × Доверие
-```
-Никаких акций. Никаких дивидендов из воздуха. Только реальные физические результаты: посаженные леса, возведенные дома, спасенные жизни, проведенные операции, переданные знания.
+## PART 2. THE SYSTEM
 
 Degenerative capitalism created an environment that punishes creation:
 - A student painting a picture — "That's not a business proposal."
@@ -57,64 +34,36 @@ No stocks. No speculative dividends. Only real physical outcomes: forests plante
 
 ---
 
-## ЧАСТЬ 3. РЕВОЛЮЦИЯ В КОДЕ | PART 3. REVOLUTION IN CODE
+## PART 3. REVOLUTION IN CODE
 
-NEXUS-CORE — это не «новая крипта». Это математический аппарат для перезагрузки экономики цивилизации с чистого листа.
+NEXUS-CORE is not a "new cryptocurrency". It is a mathematical apparatus for resetting civilization's economy from a clean slate.
 
 ```
 R(t) = Σ Ω_k × V_k × e^−λ_k(t−t_k) × (1 − Gini)
 ```
 
-Где / Where:
-- **Ω_k** — вес действия (спас жизнь = 1000, посадил дерево = 10)
-- **V_k** — проверка подлинности (ZKP + аппаратная подпись сенсора)
-- **λ_k** — коэффициент полураспада (учитель угасает в разы медленнее, чем спортсмен)
-- **Gini** — коэффициент анти-сговора (если кучка людей пытается забрать все очки себе, награда падает до 0)
-
-Где / Where:
+Where:
 - **Ω_k** — weight of action (saved a life = 1000, planted a tree = 10)
 - **V_k** — verification score (ZKP + hardware sensor signature)
 - **λ_k** — decay coefficient (teacher fades away much slower than athlete)
 - **Gini** — anti-collusion coefficient (if a crowd tries to grab all points for themselves, the reward drops to 0)
 
-Статус = Ключ доступа, а не счет в банке.
-Ты не можешь перевести свой статус на чужой кошелек или купить за него яхту. Он намертво привязан к душе человека — Soulbound. Если ты перестал создавать — твой статус плавно тает.
-
 Status = Access Key, not a bank balance. You cannot transfer your status to another wallet or buy a yacht with it. It is hard-bound to the human soul — Soulbound. If you stop creating, your status gradually melts away.
 
-### 1. Анти-задротство: Убывающая отдача | Anti-Grinding: Diminishing Returns
-Если ты убрал 1 свалку → это подвиг.
-Если ты убрал 100 свалок за день → система снижает коэффициент и говорит: «Хватит гриндить одно и то же. Иди учись новому, развивайся».
-
+### 1. Anti-Grinding: Diminishing Returns
 If you cleaned 1 bag of trash → that's a deed.
 If you cleaned 100 bags in a day → the system lowers the coefficient and says: "Enough grinding the same thing. Go learn something new, develop yourself."
 
-### 2. Анти-олигархия: Множитель Джини | Anti-Oligarchy: Gini Coefficient
-Если появляется закрытый клан, пытающийся монополизировать добрые дела: коэффициент Джини подскакивает к 1. Награда обнуляется. Единственный способ расти — вовлекать новичков и делиться задачами.
-
+### 2. Anti-Oligarchy: Gini Coefficient
 If a closed clan tries to monopolize good deeds: the Gini coefficient spikes to 1. The reward is zeroed out. The only way to grow is to engage newcomers and share tasks.
 
-### 3. Анти-геронтократия: Термодинамика | Anti-Gerontocracy: Thermodynamics
+### 3. Anti-Gerontocracy: Thermodynamics
 ```
 dR/dt = UsefulContribution(t) − λ × R(t)
 ```
-Статус — это кинетическая энергия, а не застывший капитал. Перестал двигаться — сгораешь до базового уровня. Никто не может купить себе вечный трон.
-
 Status is kinetic energy, not stagnant capital. Stop moving — you burn down to the basic level. No one can buy themselves an eternal throne.
 
-### 4. Троянский конь: Контракт Очищения | Trojan Horse: The Purge Contract
-Мы ловим старых богачей на их же тщеславии:
-
-«Профинансируйте первый автономный Оазис — и мы увековечим ваше имя на серверах вечной памяти!»
-
-Они вливают бумажные миллиарды. Мы мгновенно переводим их в физику:
-- Автоматизированные фермы
-- Солнечные и термоядерные поля
-- Строительные роботы и 3D-принтеры
-
-Как только Оазис построен — он выходит на самообеспечение. Себестоимость энергии = 0. Себестоимость еды = 0. Себестоимость жилья = 0.
-Финансовая власть элит испаряется, потому что их деньги теряют силу шантажа голодом и холодом.
-
+### 4. Trojan Horse: The Purge Contract
 We trap the old rich on their own vanity:
 
 "Fund the first autonomous Oasis — and we'll immortalize your name on servers of eternal memory!"
@@ -129,13 +78,7 @@ The financial power of elites evaporates because their money loses the power of 
 
 ---
 
-## ЧАСТЬ 4. ПРОСТАЯ ИДЕЯ | PART 4. THE SIMPLE IDEA
-
-Мы строим общество, где:
-- **Нельзя умереть с голода** — даже если ты ошибся, оступился или потерял ориентиры.
-- **Нельзя стать паразитом** — статус тает каждый день, если ты не приносишь пользы.
-- **Нельзя купить власть** — репутация жестко привязана к делам конкретного человека.
-- **Каждый чувствует себя нужным** — от школьника до академика. Система измеряет не толщину кошелька, а то, сколько тепла, чистоты и знаний ты оставил после себя на Земле.
+## PART 4. THE SIMPLE IDEA
 
 We build a society where:
 - **You cannot starve** — even if you made mistakes, stumbled, or lost your way.
@@ -145,11 +88,7 @@ We build a society where:
 
 ---
 
-## ЧАСТЬ 5. О НАС | PART 5. ABOUT US
-
-Мы — не одинокий программист в подвале.
-Мы — содружество мыслящих людей, инженеров, учителей, рабочих и спасателей.
-Вместе мы сильнее, чем любой бюрократический аппарат прошлого. Мы способны сломать морок абсурда, невежества и войн. Но сделать это можно только вместе.
+## PART 5. ABOUT US
 
 We are not a lone coder in a basement.
 We are a fellowship of thinkers, engineers, teachers, builders, and rescuers.
@@ -157,51 +96,48 @@ Together we are stronger than any bureaucratic machinery of the past. We can bre
 
 ---
 
-## ЧАСТЬ 6. ЧТО МЫ СТРОИМ | PART 6. WHAT WE BUILD
+## PART 6. WHAT WE BUILD
 
-### Архитектурная матрица | Architectural Matrix
-| Vector | Угроза | Модуль |
+### Architectural Matrix
+| Vector | Threat | Module |
 |--------|--------|--------|
-| **A** | Sybil / Боты | `identity-zkp/` (ZKP + Web of Trust) |
-| **B** | Оракул / Глубокая фальшь | `validators/` (Hardware Root of Trust, ATECC608A) |
-| **C** | Паноптикон / Слежка | `identity-zkp/` (zk-SNARKs приватность личности) |
-| **D** | Блокировка сети | `iot-depin-network/` (LoRaWAN / Libp2p автономный Mesh) |
-| **E** | Отказ датчиков | `core-engine/` (Kalman Filter + локальный режим Оазиса) |
-| **F** | Геронтократия | `core-engine/` (Динамический полураспад статуса) |
-| **G** | Конвертация фиата | `docs/osmotic_membrane.md` (Осмотическое поглощение) |
-| **H** | ИИ-логистика | `core-engine/resource_balancer.rs` (ОГАС 2.0 / Матрицы Леонтьева) |
-| **I** | Образование | `validators/social_awakening.py` (Школы Универсалов) |
-| **J** | Финансирование | `smart-contracts/PurgeContract.sol` (Троянский аирдроп) |
-| **K** | Физическое железо | `core-engine/proof_of_assembly.py` (Гаражная сборка) |
-| **L** | Синтез навыков | `core-engine/skill_tree.py` (Кросс-доменные амбидекстры) |
+| **A** | Sybil / Bot farms | `identity-zkp/` (ZKP + Web of Trust) |
+| **B** | Oracle / Deepfake | `validators/` (Hardware Root of Trust, ATECC608A) |
+| **C** | Panopticon | `identity-zkp/` (zk-SNARKs privacy) |
+| **D** | Internet shutdown | `iot-depin-network/` (LoRaWAN / Libp2p autonomous Mesh) |
+| **E** | Sensor failure | `core-engine/` (Kalman Filter + local Oasis mode) |
+| **F** | Gerontocracy | `core-engine/` (Dynamic status decay) |
+| **G** | Fiat conversion | `docs/osmotic_membrane.md` (Osmotic absorption) |
+| **H** | AI logistics | `core-engine/resource_balancer.rs` (OGAS 2.0 / Leontief matrices) |
+| **I** | Education | `validators/social_awakening.py` (Schools of Universalists) |
+| **J** | Funding | `smart-contracts/PurgeContract.sol` (Trojan airdrop) |
+| **K** | Hardware | `core-engine/proof_of_assembly.py` (Garage assembly) |
+| **L** | Skill synthesis | `core-engine/skill_tree.py` (Cross-domain ambidexters) |
 
-### Базовая математика | Fundamental Mathematics
+### Fundamental Mathematics
 
-**Репутационная формула / Reputation Formula:**
+**Reputation Formula:**
 ```
 R_i(t) = Σ_k Ω_k × V_k × e^−λ_k(t−t_k) × (1 − Gini)
 ```
 
-**Термодинамический поток / Thermodynamic Flow:**
+**Thermodynamic Flow:**
 ```
 dR/dt = UsefulContribution(t) − λ × R(t)
 ```
 
-**Множитель кросс-доменных навыков / Cross-Domain Multiplier:**
+**Cross-Domain Multiplier:**
 ```
-×5.0 за междисциплинарный синтез (наука + физический труд)
+×5.0 for interdisciplinary synthesis (science + physical labor)
 ```
 
-**Роялти наставника / Mentor Royalty:**
+**Mentor Royalty:**
 ```
-10% пожизненного статуса наставнику за дела пробужденных им учеников
+10% lifetime reputation from students awakened by a mentor
 ```
 
 ---
 
-> *Будущее — это не место, куда мы идём. Будущее — это то, что мы создаем своими руками.*
 > *The future is not a place we are going to, but one we are creating with our own hands.*
 
-Этот манифест соединяет всю траекторию нашего пути: от изначальной злости на несправедливость мира до строгой математической формулы, защищённой компиляторами и кодом. Положите этот файл в корень репозитория. Теперь у вашего протокола есть и тело, и голос.
-
-This manifesto connects the entire trajectory of our journey: from the initial anger at the injustice of the world to a strict mathematical formula protected by compilers and code. Place this file at the root of the repository. Now your protocol has both a body and a voice.
+This manifesto connects the entire trajectory of our journey: from the initial anger at the injustice of the world to a strict mathematical formula protected by compilers and code. Place this file at the root of the repository. Now your protocol has both body and voice.
