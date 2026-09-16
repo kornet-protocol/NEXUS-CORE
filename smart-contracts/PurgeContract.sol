@@ -20,8 +20,8 @@ interface IDexAdapter {
 }
 
 /// @title Purge Contract
-/// @notice Контракт Очищения. Принимает мем-коины, генерирует ликвидность
-///         через DEX-агрегацию и направляет средства на казначейство NEXUS.
+/// @notice Purge Contract. Accepts meme coins, generates liquidity
+///         via DEX aggregation and routes funds to NEXUS Treasury.
 contract PurgeContract is Ownable, ReentrancyGuard, Pausable {
     IERC20 public immutable usdc;
     IERC20 public immutable usdt;
@@ -63,7 +63,7 @@ contract PurgeContract is Ownable, ReentrancyGuard, Pausable {
         dexAdapter = IDexAdapter(_dexAdapter);
     }
 
-    /// @notice Основной метод очищения: пользователь отправляет мем-коин
+    /// @notice Main purge method: user sends meme coin
     function purgeToken(
         address token,
         uint256 amount,
@@ -94,7 +94,7 @@ contract PurgeContract is Ownable, ReentrancyGuard, Pausable {
         return usdValue;
     }
 
-    /// @notice Обновить DEX-адаптер (только multisig)
+    /// @notice Update DEX adapter (multisig only)
     function updateDexAdapter(address newAdapter) external onlyMultisig {
         require(newAdapter != address(0), "Invalid adapter");
         address old = address(dexAdapter);
@@ -102,27 +102,27 @@ contract PurgeContract is Ownable, ReentrancyGuard, Pausable {
         emit AdapterUpdated(old, newAdapter);
     }
 
-    /// @notice Добавить поддерживаемый мем-коин (только multisig)
+    /// @notice Add supported meme coin (multisig only)
     function addSupportedToken(address token) external onlyMultisig {
         supportedTokens[token] = true;
     }
 
-    /// @notice Удалить токен (при обнаружении скама)
+    /// @notice Remove token (on scam detection)
     function removeSupportedToken(address token) external onlyMultisig {
         supportedTokens[token] = false;
     }
 
-    /// @notice Экстренная пауза (multisig)
+    /// @notice Emergency pause (multisig)
     function pause() external onlyMultisig {
         _pause();
     }
 
-    /// @notice Снятие паузы (multisig)
+    /// @notice Unpause (multisig)
     function unpause() external onlyMultisig {
         _unpause();
     }
 
-    /// @notice Получить текущие настройки контракта
+    /// @notice Get current contract config
     function getConfig() external view returns (
         uint256 totalVolume,
         uint256 lastPurge,

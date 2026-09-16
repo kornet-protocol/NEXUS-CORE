@@ -1,45 +1,45 @@
-# Ambidexter Academy: Академия Амбидекстров
+# Ambidexter Academy: Academy of Ambidexters
 
-## Принцип
+## Principle
 
-Старая школа штампует винтики, которые умеют одну функцию. Мы растим **Универсалов** — людей с синхронными полушариями, которые утром пишут код, днём чинят гидропонику, вечером играют на скрипке. Амбидекстрия мозга = эволюционный скачок.
+Old school stamps out cogs who know one function. We grow **Universalists** — people with synchronized hemispheres who write code in the morning, fix hydroponics at noon, play violin at night. Brain ambidexterity = evolutionary leap.
 
-## Дерево Навыков (RPG IRL)
+## Skill Tree (RPG IRL)
 
-В приложении `app-frontend/ui` у каждого подростка профиль. Не «Математика» и «Литература», а ветки:
+In the `app-frontend/ui` app, every teenager has a profile. Not "Math" and "Literature," but branches:
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                UNIVERSALIST SKILL TREE                        │
 ├────────────────────┬────────────────────┬───────────────────┤
-│   ЛЕВОЕ (ЛОГИКА)   │   СИНТЕЗ         │   ПРАВОЕ (ТВОРЧ)  │
-│                    │                  │                   │
-│ • Био-инженерия   │ • Нейро-архитектура│ • Музыка          │
-│ • Квантовая логистика│ • Кибер-сад    │ • Скульптура      │
-│ • Робототехника    │ • Эко-дизайн     │ • Поэзия          │
-│ • Программирование │ • Социальный инжиниринг│ • Живопись   │
+│   LEFT (LOGIC)     │   SYNTHESIS       │   RIGHT (CREATIVE)│
+│                    │                   │                   │
+│ • Bio-Engineering  │ • Neuro-Architecture│ • Music           │
+│ • Quantum Logistics│ • Cyber-Garden    │ • Sculpture       │
+│ • Robotics         │ • Eco-Design      │ • Poetry          │
+│ • Programming      │ • Social Engineering│ • Painting        │
 └────────────────────┴────────────────────┴───────────────────┘
          │                    │                    │
          └────────────────────┼────────────────────┘
-                  СИНТЕЗ НАВЫКОВ (cross-branch)
+                   SKILL SYNTHESIS (cross-branch)
 ```
 
-## Мультипликатор Статуса (Синтез)
+## Status Multiplier (Synthesis)
 
-Скрытый триггер зашит в ядро репутации. Алгоритм математически заставляет мозг развивать межполушарные связи:
+A hidden trigger is embedded in the reputation core. The algorithm mathematically forces the brain to develop inter-hemispheric connections:
 
 ```
-Статус без синтеза:   R_single(t) = Σ ω_k · V_k · e^(-λt) × 1      (коэффициент x1)
-Синтез-множитель:    R_synth(t)  = Σ ω_k · V_k · e^(-λt) × 5      (коэффициент x5)
+Status without synthesis:  R_single(t) = Σ ω_k · V_k · e^(-λt) × 1      (coefficient x1)
+Synthesis multiplier:      R_synth(t)  = Σ ω_k · V_k · e^(-λt) × 5      (coefficient x5)
 
-Где:
-  S = количество cross-дисциплинарных связей (левое ∩ правое)
-  Триггер: если S >= 1 (есть навык И левой, И правой ветки) → множитель x5
+Where:
+  S = number of cross-disciplinary links (left ∩ right)
+  Trigger: if S >= 1 (has skill from BOTH left and right branch) → x5 multiplier
 ```
 
-Если юнит развивает только одну ветку (например, только пишет код) — его статус растёт с коэффициентом **x1**. Если комбинирует навыки (сегодня написал код `[Логика]`, завтра сыграл концерт `[Искусство]`, послезавтра посадил дерево `[Био-моторика]`) — активируется **Синтетический Мультипликатор (x5)**. Система на уровне дофамина заставляет мозг формировать новые нейронные связи между полушариями.
+If a unit develops only one branch (e.g., only codes) — status grows at **x1**. If they combine skills (coded today `[Logic]`, played concert tomorrow `[Art]`, planted tree day after `[Bio-motorics]`) — **Synthetic Multiplier (x5)** activates. The system at the dopamine level forces the brain to form new neural connections between hemispheres.
 
-### Пример расчёта
+### Calculation Example
 ```python
 # core-engine/skill_tree.py
 SYNTHESIS_MULTIPLIER = 5.0
@@ -50,82 +50,82 @@ class SkillTree:
         left_count = len(skills & LEFT_HEMISPHERE)
         right_count = len(skills & RIGHT_HEMISPHERE)
         cross_links = min(left_count, right_count)
-        # Синтез работает только при наличии ОБЕИХ сторон → плоский x5
+        # Synthesis works only when BOTH sides present → flat x5
         return SYNTHESIS_MULTIPLIER if cross_links > 0 else 1.0
 
-# core-engine/reputation_decay.py (скрытый триггер)
+# core-engine/reputation_decay.py (hidden trigger)
 def calculate_reputation(contributions, current_time, synthesis_multiplier=1.0):
     total = 0.0
     for c in contributions:
         ...  # ω_k · V_k · e^(-λ(t-t_k)) · (1 - Gini)
-    return total * synthesis_multiplier  # x5 применяется здесь
+    return total * synthesis_multiplier  # x5 applied here
 ```
 
-## Учителя-Магистры (Royalties)
+## Master Teachers (Royalties)
 
-В `validators/social_awakening.py` заложена система роялти для наставников. Расширяем:
+`validators/social_awakening.py` embeds a royalty system for mentors. Extended:
 
 ```python
 class MasterTeacher:
     def mentor_reward(self, student_id, student_achievement):
-        # Если мастер обучил ребёнка быть Универсалом,
-        # и ребёнок спроектировал Оазис:
-        lifetime_royalty = student_achievement * 0.1  # 10% статуса всю жизнь
+        # If master taught child to be Universalist,
+        # and child designed an Oasis:
+        lifetime_royalty = student_achievement * 0.1  # 10% status for life
         self.apply_status_update(self.mentor_id, lifetime_royalty)
         return "MENTOR_REWARDED: 10% lifetime karma flowing"
 ```
 
-Обучать гениев становится самым выгодным делом на Земле.
+Teaching geniuses becomes the most profitable act on Earth.
 
-## Геймификация в приложении
+## App Gamification
 
-| Экран | Механика |
-|-------|----------|
-| Профиль | Skill Tree визуализация (радиальная диаграмма) |
-| Квесты | "Сегодня: реши уравнение + собери схему" |
-| Награда | Анимация роста R(t) при синтезе |
-| Гильдия | Рейтинг Универсалов по cross-link score |
+| Screen | Mechanic |
+|--------|----------|
+| Profile | Skill Tree visualization (radial diagram) |
+| Quests | "Today: solve equation + assemble circuit" |
+| Reward | R(t) growth animation on synthesis |
+| Guild | Universalist ranking by cross-link score |
 
-## Этапы внедрения
+## Implementation Phases
 
-### Phase 0 (0-6 лет): Амбидекстрия физическая
-- Художественная гимнастика 2×/день
-- Рисование обеими руками
-- Музыка + математика параллельно
+### Phase 0 (0-6 years): Physical Ambidexterity
+- Rhythmic gymnastics 2×/day
+- Drawing with both hands
+- Music + mathematics in parallel
 
-### Phase 1 (6-12 лет): Кругозор
-- Все науки одновременно (не последовательно)
-- Проектное обучение с 1-го класса
+### Phase 1 (6-12 years): Horizon
+- All sciences simultaneously (not sequentially)
+- Project-based learning from grade 1
 
-### Phase 2 (12-18 лет): Специализация + практика
-- Выбор ветки в Skill Tree
-- Реальные проекты Оазиса
+### Phase 2 (12-18 years): Specialization + Practice
+- Skill Tree branch selection
+- Real Oasis projects
 
-### Phase 3 (18+): Непрерывное создание
-- Peer-to-peer, наставники вместо учителей
-- Karma Index вместо диплома
+### Phase 3 (18+): Continuous Creation
+- Peer-to-peer, mentors instead of teachers
+- Karma Index instead of diploma
 
-## Интеграция с кодовой базой
+## Codebase Integration
 
-| Компонент | Файл | Роль |
+| Component | File | Role |
 |-----------|------|------|
-| Skill Tree | `core-engine/skill_tree.py` | Расчёт синтез-бонуса |
-| Репутация | `core-engine/reputation_decay.py` | R(t) с учётом навыков |
-| Наставник | `validators/social_awakening.py` | Royalties мастерам |
-| UI | `app-frontend/ui/index.html` | Интерфейс Skill Tree |
-| Доктрина | `docs/schools_of_universalists.md` | Философия образования |
+| Skill Tree | `core-engine/skill_tree.py` | Synthesis bonus calculation |
+| Reputation | `core-engine/reputation_decay.py` | R(t) with skills |
+| Mentor | `validators/social_awakening.py` | Master royalties |
+| UI | `app-frontend/ui/index.html` | Skill Tree interface |
+| Doctrine | `docs/schools_of_universalists.md` | Education philosophy |
 
-## Почему это сработает
+## Why This Works
 
-1. **Дофамин от созидания** — система вознаграждает помощь другим, не хлам
-2. **Эволюционное преимущество** — амбидекстры адаптивнее
-3. **Сетевой эффект** — чем больше Универсалов, тем быстрее рост
-4. **Отсутствие министерств** — протокол сам обучает через игру
+1. **Dopamine from Creation** — system rewards helping others, not junk
+2. **Evolutionary Advantage** — ambidexters are more adaptive
+3. **Network Effect** — more Universalists = faster growth
+4. **No Ministries** — protocol teaches itself through play
 
-## Риски
+## Risks
 
-| Риск | Митигация |
-|------|-----------|
-| Дети зациклятся на одной ветке | Синтез-бонус принуждает к кросс-дисциплинарности |
-| Подделка достижений | ZK-proof каждого навыка |
-| Токсичная конкуренция | Репутация за совместные проекты |
+| Risk | Mitigation |
+|------|------------|
+| Kids fixate on one branch | Synthesis bonus enforces cross-disciplinarity |
+| Achievement forgery | ZK-proof per skill |
+| Toxic competition | Reputation for joint projects |

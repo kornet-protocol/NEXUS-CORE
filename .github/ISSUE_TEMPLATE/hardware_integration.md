@@ -1,24 +1,24 @@
 ---
 name: "[Hardware] ZKP Sensor Integration"
-about: Интеграция аппаратных модулей для защиты от фейков (Root of Trust)
-title: "[HW] Внедрение чипа ATECC608A в C++ ноду"
+about: Hardware module integration for fake resistance (Root of Trust)
+title: "[HW] ATECC608A chip integration in C++ node"
 labels: hardware, help wanted, good first issue
 assignees: ''
 
 ---
 
-### Текущая проблема
-В файле `iot-depin-network/arduino_air_sensor.cpp` используется программный SHA-256 (hardcoded secret), что уязвимо для экстракции ключа и атаки Сивиллы на уровне железа.
+### Current Problem
+In `iot-depin-network/arduino_air_sensor.cpp`, software SHA-256 (hardcoded secret) is used, vulnerable to key extraction and hardware-level Sybil attacks.
 
-### Требуемое решение
-1. Подключить библиотеку CryptoAuthLib.
-2. Инициализировать I2C соединение с чипом ATECC608A.
-3. Реализовать подпись RAW-данных с датчика по кривой Ed25519 (Secure Enclave).
+### Required Solution
+1. Integrate CryptoAuthLib.
+2. Initialize I2C connection with ATECC608A chip.
+3. Implement raw sensor data signing via Ed25519 curve (Secure Enclave).
 
-**Награда (Karma):** Высший приоритет. Вы создаете аппаратную броню системы.
+**Reward (Karma):** Highest priority. You are building the system's hardware armor.
 
 ### Acceptance Criteria
-- [ ] Чип ATECC608A инициализируется через I2C
-- [ ] Сырые данные датчика хэшируются SHA256 на устройстве
-- [ ] Хэш подписывается приватным ключом, хранящимся в Secure Enclave
-- [ ] Подпись проверяется на стороне валидатора (`infrastructure_scan.py`)
+- [ ] ATECC608A chip initializes via I2C
+- [ ] Raw sensor data hashed with SHA256 on device
+- [ ] Hash signed with private key stored in Secure Enclave
+- [ ] Signature verified on validator side (`infrastructure_scan.py`)

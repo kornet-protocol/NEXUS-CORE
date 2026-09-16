@@ -1,64 +1,64 @@
-# Trojan Airdrop: Контракт Очищения
+# Osmotic Funding: The Purge Contract
 
-## Философия
+## Philosophy
 
-Мы используем дегенеративность существующей системы против неё самой. Миллиарды долларов заперты в мем-коинах (DOGE, SHIB, PEPE, WIF и сотни тысяч других), которые обесцениваются со временем. Вместо того чтобы ждать, пока их владельцы поймут это, мы предлагаем им **обменять обесценивающиеся токены на статус**.
+We use the degeneracy of the existing system against itself. Billions of dollars are locked in meme coins (DOGE, SHIB, PEPE, WIF, and hundreds of thousands of others) that depreciate over time. Instead of waiting for their holders to realize this, we offer them **to exchange depreciating tokens for status**.
 
-## Механика
+## Mechanics
 
 ```
-[Пользователь] --(burn мем-коинов)--> [PurgeContract] --(swap через DEX)--> [USDC/USDT] --> [NEXUS Treasury] --> [ATECC608A + Servers]
-                                            |
-                                            +--(mint Founding Purger SBT)--> [Пользователь]
+[User] --(burn meme coins)--> [PurgeContract] --(swap via DEX)--> [USDC/USDT] --> [NEXUS Treasury] --> [ATECC608A + Servers]
+                                              |
+                                              +--(mint Founding Purger SBT)--> [User]
 ```
 
-## Контракт PurgeContract
+## PurgeContract
 
-**Вход:** Любой ERC20 токен из списка поддерживаемых (мем-коины с низкой капитализацией).
-**Выход:** USDC/USDT на казначейство NEXUS + Founding Purger SBT для пользователя.
+**Input:** Any ERC20 token from supported list (low-cap meme coins).
+**Output:** USDC/USDT to NEXUS Treasury + Founding Purger SBT for user.
 
-### Ключевые защиты
+### Key Protections
 
-1. **Honeypot Detection:** Тестовый свап 0.1% токена перед основной транзакцией. Если тест падает — транзакция отклоняется.
-2. **Slippage Protection:** Максимально допустимый slippage — 5%. Пользователь указывает `minExpectedUSD`.
-3. **Cooldown:** Один токен можно пушить раз в 24 часа (защита от wash trading).
-4. **Multi-sig Treasury:** Средства выводятся только через Gnosis Safe (3-of-5).
-5. **Emergency Pause:** В случае атаки контракт можно заморозить.
+1. **Honeypot Detection:** Test swap of 0.1% token before main transaction. If test fails — transaction rejected.
+2. **Slippage Protection:** Maximum allowed slippage — 5%. User specifies `minExpectedUSD`.
+3. **Cooldown:** One token can be purged once per 24 hours (wash trading protection).
+4. **Multi-sig Treasury:** Funds withdrawn only via Gnosis Safe (3-of-5).
+5. **Emergency Pause:** Contract can be frozen in case of attack.
 
-## Контракт FoundingPurger (SBT)
+## FoundingPurger Contract (SBT)
 
-**Непередаваемый токен** с метаданными:
-- `purgeTimestamp` — когда пользователь участвовал в очищении
-- `purgeAmount` — сколько мусора он сжёг
-- `oasisPriorityMultiplier` — множитель 10x для доступа к Оазисам
+**Non-transferable token** with metadata:
+- `purgeTimestamp` — when user participated in purge
+- `purgeAmount` — how much trash they burned
+- `oasisPriorityMultiplier` — 10x multiplier for Oasis access
 
-## Экономика
+## Economics
 
-| Параметр | Значение |
-|-----------|----------|
-| Порог пуша | $100 эквивалент мусорных токенов |
-| Максимальная эмиссия | 10,000 Founding Purger SBT |
-| Максимальный slippage | 5% |
-| Cooldown между пушами | 24 часа на один токен |
+| Parameter | Value |
+|-----------|-------|
+| Purge Threshold | $100 equivalent in trash tokens |
+| Max Supply | 10,000 Founding Purger SBT |
+| Max Slippage | 5% |
+| Cooldown Between Purges | 24 hours per token |
 | Treasury Multi-sig | 3-of-5 Gnosis Safe |
 
-## Риски и митигация
+## Risks & Mitigation
 
-| Риск | Митигация |
-|------|-----------|
-| Honeypot-токены | Тестовый свап 0.1% перед основной транзакцией |
-| Rug pull создателей токена | Whitelist только проверенных токенов, multi-sig добавление |
+| Risk | Mitigation |
+|------|------------|
+| Honeypot tokens | 0.1% test swap before main transaction |
+| Token creator rug pull | Whitelist only vetted tokens, multi-sig addition |
 | Regulatory risk | No KYC, permissionless, jurisdiction-agnostic |
-| Flash loan attack на пуше | Cooldown 24h, slippage protection |
-| Treasury drain | Multi-sig 3-of-5, timelock 48h |
+| Flash loan attack on purge | 24h cooldown, slippage protection |
+| Treasury drain | Multi-sig 3-of-5, 48h timelock |
 
-## Деплой
+## Deployment
 
-1. Deploy `FoundingPurger` на Ethereum mainnet / L2
-2. Deploy `PurgeContract` с адресом FoundingPurger и NEXUS Treasury
-3. Whitelist первые 50 мем-коинов через multi-sig
-4. Запустить маркетинговую кампанию "Burn your bags, get status"
+1. Deploy `FoundingPurger` on Ethereum mainnet / L2
+2. Deploy `PurgeContract` with FoundingPurger address and NEXUS Treasury
+3. Whitelist first 50 meme coins via multi-sig
+4. Launch "Burn your bags, get status" campaign
 
-## Юридическое замечание
+## Legal Note
 
-Контракт работает на уровне permissionless DeFi. Мы не предлагаем инвестиции, не гарантируем доход и не ответственны за действия пользователей. Всё происходит через публичные смарт-контракты.
+Contract operates at permissionless DeFi layer. We do not offer investments, guarantee returns, or assume responsibility for user actions. Everything happens through public smart contracts.

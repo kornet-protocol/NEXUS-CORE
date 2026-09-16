@@ -1,35 +1,35 @@
 ---
 name: Pull Request
-about: Предложите изменения в протокол NEXUS-CORE
-title: "[VECTOR] Краткое описание изменения"
+about: Propose changes to NEXUS-CORE protocol
+title: "[VECTOR] Brief change description"
 labels: ''
 assignees: ''
 
 ---
 
-## Описание
-<!-- Опишите, что делает этот PR и к какому вектору он относится -->
+## Description
+<!-- Describe what this PR does and which vector it belongs to -->
 
-## Вектор
+## Vector
 - [ ] A: Identity / Sybil Resistance
 - [ ] B: Oracles / Deepfake Defense
 - [ ] C: Privacy / ZK-Proofs
 - [ ] D: Mesh / Offline Resilience
-- [ ] Core: Ядро протокола
-- [ ] Docs: Документация
+- [ ] Core: Protocol Core
+- [ ] Docs: Documentation
 
-## Тип изменений
+## Change Type
 - [ ] Bug fix
-- [ ] Новая фича
+- [ ] New feature
 - [ ] Breaking change
-- [ ] Документация
+- [ ] Documentation
 
-## Чек-лист
-- [ ] Код проходит `make test`
-- [ ] Код проходит `make lint`
-- [ ] Добавлены тесты (если применимо)
-- [ ] Обновлена документация (если применимо)
-- [ ] Соответствует кодод-стайлу проекта
+## Checklist
+- [ ] Code passes `make test`
+- [ ] Code passes `make lint`
+- [ ] Tests added (if applicable)
+- [ ] Documentation updated (if applicable)
+- [ ] Follows project code style
 
-## Ссылки
-<!-- Ссылки на related issues, docs, specs -->
+## References
+<!-- Links to related issues, docs, specs -->

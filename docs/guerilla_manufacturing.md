@@ -1,110 +1,110 @@
-# Guerrilla Manufacturing: Партизанское производство
+# Guerrilla Manufacturing: Partisan Production
 
-## Философия
+## Philosophy
 
-Как Сатоши не спрашивал разрешения ФРС на запуск Биткоина, так и мы не спрашиваем разрешения корпораций на производство железа. Если построить один завод в Азии — его закроют в первый же день. Поэтому мы создаем **Распределённую Мануфактуру** (Micro-Factories): 50 000 гаражей по всей планете, которые невозможно арестовать одновременно.
+Just as Satoshi didn't ask the Fed for permission to launch Bitcoin, we don't ask corporations for permission to manufacture hardware. Build one factory in Asia — it gets shut down day one. So we create **Distributed Manufacturing** (Micro-Factories): 50,000 garages worldwide that cannot be raided simultaneously.
 
-## Архитектура децентрализованной сборки
+## Decentralized Assembly Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                    PURGE CONTRACT (Treasury)                      │
-│              [USDC/USDT от сожжённых мем-коинов]                  │
+│              [USDC/USDT from burned meme coins]                   │
 └───────────────────────────────┬─────────────────────────────────┘
                                  │
                                  ▼
                     ┌────────────────────────┐
                     │  STEALTH LOGISTICS     │
-                    │  (Оптовые закупки)     │
-                    │  • ATECC608A ($1/чип)  │
-                    │  • Линзы, аккумуляторы │
-                    │  • PCB, корпуса 3D    │
+                    │  (Wholesale Procurement)│
+                    │  • ATECC608A ($1/chip) │
+                    │  • Lenses, batteries   │
+                    │  • PCB, 3D cases       │
                     └───────────┬────────────┘
                                  │
-                    Декларируется как:
+                    Declared as:
                     "Educational STEM kits"
                                  │
                                  ▼
-        ┌────────────────────────────────────────────────┐
-        │     ГИЛЬДИИ СБОРЩИКОВ (Proof-of-Assembly)      │
-        │  Гаражи, хакерспейсы, школьные лаборатории     │
-        │                                                │
-        │  1. 3D-печать корпуса по открытому чертежу     │
-        │  2. Спайка платы (KiCad схема в репозитории)   │
-        │  3. Прошивка NEXUS Core (secure boot)          │
-        │  4. Активация в mesh-сети (LoRa handshake)      │
-        └───────────────────┬────────────────────────────┘
-                            │
-                            ▼
-              ┌───────────────────────────┐
-              │  KARMA + STABLE REWARD    │
-              │  Собрал камеру → +R(t)    │
-              │  Активировал → +USDC      │
-              └───────────────────────────┘
+         ┌────────────────────────────────────────────────┐
+         │     ASSEMBLER GUILDS (Proof-of-Assembly)       │
+         │  Garages, hackerspaces, school labs            │
+         │                                                │
+         │  1. 3D-print case from open schematic          │
+         │  2. Solder board (KiCad schema in repo)        │
+         │  3. Flash NEXUS Core (secure boot)             │
+         │  4. Activate in mesh network (LoRa handshake)  │
+         └───────────────────┬────────────────────────────┘
+                             │
+                             ▼
+               ┌───────────────────────────┐
+               │  KARMA + STABLE REWARD    │
+               │  Assembled camera → +R(t) │
+               │  Activated → +USDC        │
+               └───────────────────────────┘
 ```
 
-## Этапы реализации
+## Implementation Stages
 
-### 1. Закупка сырья (на деньги PurgeContract)
-- Смарт-контракт генерирует стейблкоины через swap мем-коинов на DEX
-- Анонимная оптовая закупка компонентов у дистрибьюторов (LCSC, Mouser, Digi-Key)
-- Партии дробятся, чтобы не привлекать внимание
+### 1. Raw Materials Procurement (PurgeContract Funds)
+- Smart contract generates stablecoins via meme-coin swap on DEX
+- Anonymous wholesale component purchase from distributors (LCSC, Mouser, Digi-Key)
+- Batches fragmented to avoid attention
 
-### 2. Логистический стелс
-| Упаковка | Декларация на таможне | Реальное содержимое |
-|----------|----------------------|---------------------|
-| Коробка A | "DIY Electronics Learning Kit" | PCB + ATECC608A + линзы |
-| Коробка B | "3D Printing Filament Sample" | Корпуса камер |
-| Коробка C | "Robotics Competition Parts" | Аккумуляторы + антенны LoRa |
+### 2. Logistics Stealth
+| Package | Customs Declaration | Actual Contents |
+|---------|---------------------|-----------------|
+| Box A | "DIY Electronics Learning Kit" | PCB + ATECC608A + lenses |
+| Box B | "3D Printing Filament Sample" | Camera cases |
+| Box C | "Robotics Competition Parts" | Batteries + LoRa antennas |
 
-Ни одна коробка не содержит готовое "шпионское оборудование". Только компоненты для образовательных наборов.
+No box contains ready-made "spy equipment." Only components for educational kits.
 
-### 3. Гильдии Сборщиков (Proof-of-Assembly)
-В приложении `app-frontend/ui` появляется квест:
-- **Задание:** "Собери Глаз NEXUS"
-- **Чертеж:** `iot-depin-network/arduino_air_sensor.cpp` + KiCad файлы в репозитории
-- **Верификация:** камера должна подписать challenge-сообщение приватным ключом ATECC608A
-- **Награда:** karma boost + доля стейблкоинов из treasury
+### 3. Assembler Guilds (Proof-of-Assembly)
+In `app-frontend/ui` a quest appears:
+- **Task:** "Assemble NEXUS Eye"
+- **Blueprint:** `iot-depin-network/arduino_air_sensor.cpp` + KiCad files in repo
+- **Verification:** Camera must sign challenge message with ATECC608A private key
+- **Reward:** karma boost + treasury stablecoin share
 
-### 4. Proof-of-Assembly протокол
+### 4. Proof-of-Assembly Protocol
 ```python
 class AssemblyGuild:
     def verify_assembly(self, device_id, signature, public_key_attestation):
-        # 1. Проверка, что чип — настоящий ATECC608A (secure enclave challenge)
+        # 1. Verify chip is genuine ATECC608A (secure enclave challenge)
         if not self.attest_chip(device_id, public_key_attestation):
             return "REJECTED: Fake silicon"
-        # 2. Проверка, что плата спаяна по схеме (BOM hash match)
+        # 2. Verify board soldered to spec (BOM hash match)
         if not self.verify_bom_hash(device_id):
             return "REJECTED: Wrong components"
-        # 3. Активация в mesh-сети
+        # 3. Activate in mesh network
         self.activate_device(device_id, signature)
         return "ACCEPTED: Device online. Assembler rewarded."
 ```
 
-## Почему это невозможно остановить
+## Why This Cannot Be Stopped
 
-1. **Нет центрального завода** — нечего бомбить или арестовать
-2. **50 000 гаражей** — координированный рейд физически невозможен
-3. **Легальная оболочка** — компоненты = "образовательные наборы"
-4. **Армия "кулибиных"** — подростки и гики сами производят глаза системы
-5. **Самофинансирование** — PurgeContract оплачивает сырьё мем-коинами
+1. **No central factory** — nothing to bomb or arrest
+2. **50,000 garages** — coordinated raid physically impossible
+3. **Legal wrapper** — components = "educational kits"
+4. **Army of "Kulibins"** — teens and geeks manufacture the system's eyes
+5. **Self-funding** — PurgeContract pays for materials with meme coins
 
-## Интеграция с кодовой базой
+## Codebase Integration
 
-| Компонент | Файл | Роль |
+| Component | File | Role |
 |-----------|------|------|
-| Treasury | `smart-contracts/PurgeContract.sol` | Генерация USDC |
-| Схемы | `iot-depin-network/arduino_air_sensor.cpp` | Чертеж платы |
-| Mesh | `iot-depin-network/lora_mesh_node.cpp` | Активация устройств |
-| Верификация | `core-engine/genesis_protocol.py` | Hardware Root of Trust |
-| Гильдия | `core-engine/proof_of_assembly.py` | Логика Proof-of-Assembly |
-| UI квест | `app-frontend/ui/index.html` | Интерфейс сборщика |
+| Treasury | `smart-contracts/PurgeContract.sol` | USDC generation |
+| Schematics | `iot-depin-network/arduino_air_sensor.cpp` | Board blueprint |
+| Mesh | `iot-depin-network/lora_mesh_node.cpp` | Device activation |
+| Verification | `core-engine/genesis_protocol.py` | Hardware Root of Trust |
+| Guild | `core-engine/proof_of_assembly.py` | Proof-of-Assembly logic |
+| UI Quest | `app-frontend/ui/index.html` | Assembler interface |
 
-## Риски и митигация
+## Risks & Mitigation
 
-| Рис | Митигация |
-|-----|-----------|
-| Таможня блокирует партию | Дробление на микро-партии (< 10 коробок) |
-| Подделка чипов | Attestation через ATECC608A secure enclave |
-| Сборщик не активирует устройство | Награда только после активации в mesh |
-| Корпоративный иск | GPLv3 — схемы открыты, сборка легальна |
+| Risk | Mitigation |
+|------|------------|
+| Customs blocks shipment | Fragment into micro-batches (< 10 boxes) |
+| Chip counterfeiting | Attestation via ATECC608A secure enclave |
+| Assembler doesn't activate device | Reward only after mesh activation |
+| Corporate lawsuit | GPLv3 — schematics open, assembly legal |

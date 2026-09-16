@@ -2,9 +2,11 @@
 # NEXUS KORNET ENGINE: REPUTATION DECAY MODEL v0.2
 # Mathematical Model: R_i(t) = sum_k Omega_k * V_k * exp(-lambda_k * (t - t_k)) * (1 - Gini(C_k))
 # Thermodynamics: dR/dt = UsefulContribution(t) - lambda * R(t)
+# High-Water Mark (HWM): Immutable peak reputation ledger — HWM = max(R(t)) over lifetime
 # =====================================================================
 
 import math
+from dataclasses import dataclass
 from typing import List, Dict, Any
 
 try:
@@ -15,6 +17,19 @@ except ImportError:
     from logging import get_logger
 
 logger = get_logger("reputation_decay")
+
+
+@dataclass
+class ReputationState:
+    """Dual-ledger reputation: Kinetic (decaying) + High-Water Mark (immutable)"""
+    kinetic: float          # R(t) — current resource allocation capacity
+    high_water_mark: float  # HWM — peak reputation ever achieved, never decays
+    last_updated: float     # timestamp of last kinetic update
+
+    @property
+    def is_legendary(self) -> bool:
+        """HWM exceeds threshold for Hall of Memory inclusion"""
+        return self.high_water_mark >= 1000.0  # life_saved threshold
 
 
 def calculate_reputation(contributions: List[Dict[str, Any]], current_time: float, caste: str = "default", synthesis_multiplier: float = 1.0) -> float:
@@ -41,6 +56,23 @@ def calculate_reputation(contributions: List[Dict[str, Any]], current_time: floa
     return total * synthesis_multiplier
 
 
+def update_reputation_state(
+    current_state: ReputationState,
+    new_kinetic: float,
+    current_time: float
+) -> ReputationState:
+    """
+    Update dual-ledger reputation.
+    Kinetic decays per thermodynamics. HWM only increases, never decreases.
+    """
+    new_hwm = max(current_state.high_water_mark, new_kinetic)
+    return ReputationState(
+        kinetic=new_kinetic,
+        high_water_mark=new_hwm,
+        last_updated=current_time
+    )
+
+
 def differential_equation(R: float, useful_contribution: float, lambda_decay: float) -> float:
     if R < 0:
         raise ValueError("R must be non-negative")
@@ -65,3 +97,8 @@ def compute_creative_sports_balance(contributions: List[Dict[str, Any]]) -> Dict
         "sports": sports / total,
         "utilitarian": utilitarian / total,
     }
+
+
+def get_hall_of_memory_threshold() -> float:
+    """Minimum HWM for permanent Hall of Memory inscription"""
+    return CATEGORY_WEIGHTS.get("life_saved", 1000.0)

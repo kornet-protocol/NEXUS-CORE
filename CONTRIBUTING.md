@@ -3,6 +3,23 @@
 ## Code of Conduct
 Be respectful. Be rigorous. Be kind.
 
+## Contributor License Agreement (CLA) — MANDATORY
+
+**By submitting any Pull Request, you agree to the following:**
+
+1. **Originality** — Your contribution is your original work, or you have full rights to submit it
+2. **License Grant** — You grant the Nexus Architecture framework a perpetual, worldwide, non-exclusive, royalty-free, irrevocable license to use, modify, distribute, and sublicense your contribution under the AGPLv3
+3. **Governance Transfer** — All code, designs, and documentation submitted via PR **automatically fall under the authority of the Architect (lead maintainer)**. The Architect retains final decision-making power over:
+   - Architectural coherence and merge acceptance
+   - Protocol parameter changes and upgrade paths
+   - Direction of the framework's evolution
+4. **Moral Rights Waiver** — You waive moral rights that would prevent modification, integration, or evolutionary refactoring of your contribution
+5. **No Forking Rights** — This CLA does not grant rights to maintain competing forks under the Nexus name or trademarks
+
+**This CLA is non-negotiable.** It exists to prevent fragmentation, corporate capture, and architectural drift. The protocol is a living system, not a code commons.
+
+See `COPYRIGHT.md` for full terms.
+
 ## How to Contribute
 1. Fork the repository
 2. Create a feature branch

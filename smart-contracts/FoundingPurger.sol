@@ -7,8 +7,8 @@ import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 /// @title Founding Purger SBT
-/// @notice Soulbound Token для участников Контракта Очищения.
-///         Непередаваемый бейдж "Founding Purger".
+/// @notice Soulbound Token for Purge Contract participants.
+///         Non-transferable "Founding Purger" badge.
 contract FoundingPurger is ERC721, Ownable, ReentrancyGuard {
     uint256 public constant MAX_SUPPLY = 10_000;
     uint256 public constant PURGE_THRESHOLD = 100 * 10**18;
@@ -26,7 +26,7 @@ contract FoundingPurger is ERC721, Ownable, ReentrancyGuard {
         nexusTreasury = _treasury;
     }
 
-    /// @notice Основной шлюз очищения: пользователь жертвует "мусорные" токены
+    /// @notice Main purge gateway: user burns "trash" tokens
     function purge(
         address tokenAddress,
         uint256 amount,
@@ -52,12 +52,12 @@ contract FoundingPurger is ERC721, Ownable, ReentrancyGuard {
         return tokenId;
     }
 
-    /// @notice Приоритетный доступ к озесисам для держателей Founding Purger
+    /// @notice Priority Oasis access for Founding Purger holders
     function oasisPriorityMultiplier(address user) external view returns (uint256) {
         return hasPurged[user] ? 10 : 1;
     }
 
-    /// @notice Вывод средств на казначейство NEXUS (только мультисиг)
+    /// @notice Withdraw funds to NEXUS Treasury (multisig only)
     function fundTreasury(address tokenAddress, uint256 amount) external onlyOwner {
         IERC20(tokenAddress).transfer(nexusTreasury, amount);
         emit TreasuryFunded(amount);

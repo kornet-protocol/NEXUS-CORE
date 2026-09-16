@@ -1,10 +1,10 @@
 """
 deploy_purge.py
 ===============
-Скрипт деплоя Контракта Очищения и Founding Purger SBT.
+Deployment script for Purge Contract and Founding Purger SBT.
 
-Зависимости: web3, eth-account, python-dotenv
-Конфигурация: Foundry (forge build) + .env
+Dependencies: web3, eth-account, python-dotenv
+Configuration: Foundry (forge build) + .env
 """
 
 import json

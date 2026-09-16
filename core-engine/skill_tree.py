@@ -7,7 +7,7 @@ from __future__ import annotations
 
 from typing import Dict, Set
 
-# Базовые ветки навыков (левое / правое полушарие)
+# Base skill branches (left / right hemisphere)
 LEFT_HEMISPHERE = {
     "bio_engineering",
     "quantum_logistics",
@@ -43,10 +43,10 @@ class SkillTree:
 
     def synthesize_bonus(self, user_id: str) -> float:
         """
-        СИНТЕТИЧЕСКИЙ МУЛЬТИПЛИКАТОР (x5).
-        Алгоритм параноидально поощряет кросс-полушарный синтез:
-        - Только одна ветка (левая ИЛИ правая): множитель x1 (статус растёт медленно).
-        - Хотя бы одна связь между полушариями (левая И правое): множитель x5.
+        SYNTHETIC MULTIPLIER (x5).
+        Algorithm paranoidly encourages cross-hemisphere synthesis:
+        - Only one branch (left OR right): multiplier x1 (status grows slowly).
+        - At least one link between hemispheres (left AND right): multiplier x5.
         """
         skills = self.get_skills(user_id)
         left_count = len(skills & LEFT_HEMISPHERE)
@@ -61,7 +61,7 @@ class SkillTree:
         return min(left_count, right_count)
 
     def is_universal(self, user_id: str, threshold: int = 3) -> bool:
-        """Универсал = минимум `threshold` связей между полушариями."""
+        """Universalist = minimum `threshold` cross-hemisphere links."""
         return self.cross_link_score(user_id) >= threshold
 
     def compute_skill_reputation(
@@ -70,7 +70,7 @@ class SkillTree:
         base_reputation: float,
     ) -> float:
         """
-        Итоговый статус с учётом синтез-бонуса.
+        Final status with synthesis bonus.
         R_synth = R_base × (1 + α · S)
         """
         bonus = self.synthesize_bonus(user_id)
@@ -82,6 +82,6 @@ class SkillTree:
         royalty_rate: float = 0.10,
     ) -> float:
         """
-        Rozłty наставника: 10% статуса студента пожизненно.
+        Mentor royalty: 10% of student's status for life.
         """
         return student_achievement * royalty_rate

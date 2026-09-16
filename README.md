@@ -87,3 +87,11 @@ We need Rust/Go engineers, cryptographers, AI vision specialists, hardware maker
 Read `CONTRIBUTING.md` and choose your vector.
 
 *The future is not a place we are going to, but one we are creating.*
+
+## 💎 Support the Architecture
+
+This project is built by free people, for free people. We do not have venture investors because we will not sell your data or your future. If you believe in the NEXUS-KORNET Protocol, you can support the core development and hardware deployment.
+
+**Bitcoin (BTC):** `bc1qlg5pxgqjyns59ma9hxter8vc2znh5tqtu4y777`
+
+> *"There is only one constant, and that is change."*

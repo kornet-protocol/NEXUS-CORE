@@ -1,45 +1,45 @@
-# AI Core: Нейросетевое ядро NEXUS-KORNET
+# AI Core: NEXUS-KORNET Neural Core
 
-## Миссия
+## Mission
 
-Искусственный интеллект в KORNET — не «дурак-помощник», а **распределенный контрольный слой** для физических процессов. Он отслеживает производство, обучение, ресурсопотребление и предсказывает коллапсы до их наступления.
+AI in KORNET is not a "dummy assistant" but a **distributed control layer** for physical processes. It tracks production, education, resource consumption, and predicts collapses before they occur.
 
-## Архитектура ядра
+## Core Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                    NEXUS AI CORE (Federated)                 │
 ├─────────────┬─────────────┬─────────────┬───────────────────┤
-│ Production  │ Education   │ Resource     │ Infrastructure   │
-│ Optimizer   │ Neural Net  │ Balancer     │ Sentinel         │
-│ (ПРОМТ)     │ (ОБРАЗ)     │ (ОГАС)       │ (СТРАЖ)          │
+│ Production  │ Education   │ Resource    │ Infrastructure    │
+│ Optimizer   │ Neural Net  │ Balancer    │ Sentinel          │
+│ (PROMT)     │ (OBRAZ)     │ (OGAS)      │ (STRAZH)          │
 └─────────────┴─────────────┴─────────────┴───────────────────┘
          │               │               │               │
          ▼               ▼               ▼               ▼
-   [Заводы/Фермы]  [Школы/Курсы]  [Энергия/Вода]  [Датчики/Камеры]
+    [Factories/Farms] [Schools/Courses] [Energy/Water] [Sensors/Cameras]
 ```
 
-## 1. Production Optimizer (ПРОМТ)
+## 1. Production Optimizer (PROMT)
 
-**Задача:** Максимизировать выход продукции при минимуме входных ресурсов.
+**Task:** Maximize output while minimizing input resources.
 
-**Входы:**
-- Телеметрия с датчиков (температура, давление, расход энергии)
-- Матрица Леонтьева (технологические коэффициенты)
-- Прогноз спроса от Education Neural Net
+**Inputs:**
+- Sensor telemetry (temperature, pressure, energy flow)
+- Leontief matrix (technological coefficients)
+- Demand forecast from Education Neural Net
 
-**Выходы:**
-- Оптимальные setpoints для PID-контроллеров
-- Предупреждения о износе оборудования (predictive maintenance)
-- Динамическое перераспределение ресурсов между линиями
+**Outputs:**
+- Optimal setpoints for PID controllers
+- Equipment wear warnings (predictive maintenance)
+- Dynamic resource rebalancing between lines
 
-**Алгоритм:**
+**Algorithm:**
 ```python
 class ProductionOptimizer:
     def optimize(self, telemetry, leontief_matrix, demand_forecast):
-        # Вектор состояния: [temperature, pressure, flow_rate, ...]
-        # Целевая функция: maximize(output) - lambda * resource_consumption
-        # Ограничения: safety_thresholds, environmental_limits
+        # State vector: [temperature, pressure, flow_rate, ...]
+        # Objective: maximize(output) - lambda * resource_consumption
+        # Constraints: safety_thresholds, environmental_limits
         
         predicted_output = self.neural_net.predict(telemetry)
         optimal_setpoints = self.solve_constrained_optimization(
@@ -48,87 +48,87 @@ class ProductionOptimizer:
         return optimal_setpoints
 ```
 
-## 2. Education Neural Net (ОБРАЗ)
+## 2. Education Neural Net (OBRAZ)
 
-**Задача:** Адаптивное обучение каждого человека до максимума его потенциала.
+**Task:** Adaptive learning for every human to their maximum potential.
 
-**Принцип:** Нет стандартных учебных программ. AI строит персональную траекторию на основе:
-- Когнитивного профиля (амбидекстрия, синхронность полушарий, скорость обработки)
-- Интересов и склонностей
-- Потребностей общества (где не хватает кадров)
+**Principle:** No standard curricula. AI builds personal trajectory based on:
+- Cognitive profile (ambidexterity, hemisphere synchrony, processing speed)
+- Interests and aptitudes
+- Society's needs (where talent is scarce)
 
-**Архитектура:**
+**Architecture:**
 ```python
 class EducationNeuralNet:
     def build_trajectory(self, citizen_profile, society_needs):
-        # Анализ амбидекстрии
+        # Ambidexterity analysis
         ambidexterity_score = self.assess_ambidexterity(citizen_profile)
         
-        # Подбор дисциплин: левое + правое полушарие
+        # Discipline selection: left + right hemisphere
         left_hemisphere_subjects = ["mathematics", "logic", "programming"]
         right_hemisphere_subjects = ["art", "music", "spatial_design"]
         
-        # Если амбидекстр — комбинированный режим
+        # If ambidextrous — hybrid mode
         if ambidexterity_score > 0.7:
             return self.create_hybrid_trajectory(
                 left_hemisphere_subjects, right_hemisphere_subjects
             )
         
-        # Если доминирует одно полушарие — углубление в соответствующую область
+        # If one hemisphere dominates — deepen corresponding domain
         return self.create_specialized_trajectory(citizen_profile)
 ```
 
-**Фазы обучения:**
-1. **Фаза 0 (0-6 лет):** Сенсорное развитие, амбидекстрия, базовые моторные паттерны
-2. **Фаза 1 (6-12 лет):** Мультидисциплинарный кругозор (все науки одновременно)
-3. **Фаза 2 (12-18 лет):** Специализация + практика в реальных проектах
-4. **Фаза 3 (18+):** Непрерывное обучение через участие в созидательных проектах
+**Learning Phases:**
+1. **Phase 0 (0-6 years):** Sensory development, ambidexterity, basic motor patterns
+2. **Phase 1 (6-12 years):** Multidisciplinary horizon (all sciences simultaneously)
+3. **Phase 2 (12-18 years):** Specialization + practice in real projects
+4. **Phase 3 (18+):** Continuous learning through creative projects
 
-## 3. Resource Balancer (ОГАС)
+## 3. Resource Balancer (OGAS)
 
-**Задача:** Глобальная оптимизация распределения ресурсов (энергия, вода, материалы).
+**Task:** Global optimization of resource distribution (energy, water, materials).
 
-**Алгоритм:**
-- Динамическая матрица Леонтьева, обновляемая в реальном времени
-- Симплекс-метод на GPU для решения задачи линейного программирования
-- Предиктивная модель потребностей на основе исторических данных и сезонности
+**Algorithm:**
+- Dynamic Leontief matrix updated in real-time
+- GPU-accelerated simplex method for linear programming
+- Predictive demand model based on historical data and seasonality
 
-**Входы:**
-- Текущие запасы ресурсов
-- Планы производства от Production Optimizer
-- Погодные данные (для энергетики и сельского хозяйства)
+**Inputs:**
+- Current resource stocks
+- Production plans from Production Optimizer
+- Weather data (for energy and agriculture)
 
-**Выходы:**
-- Распределение ресурсов между Оазисами
-- Цены в Джоулях (внутренняя валюта KORNET)
-- Рекомендации по закупке/созданию избыточных мощностей
+**Outputs:**
+- Resource allocation between Oases
+- Prices in Joules (KORNET internal currency)
+- Procurement/capacity expansion recommendations
 
-## 4. Infrastructure Sentinel (СТРАЖ)
+## 4. Infrastructure Sentinel (STRAZH)
 
-**Задача:** Мониторинг физической инфраструктуры, предсказание аварий.
+**Task:** Physical infrastructure monitoring, failure prediction.
 
-**Датчики:**
-- Вибрация, температура, нагрузка на конструкциях
-- Качество воздуха, воды, почвы
-- Состояние оборудования (износ, остаточный ресурс)
+**Sensors:**
+- Vibration, temperature, structural load
+- Air, water, soil quality
+- Equipment condition (wear, remaining life)
 
-**Алгоритмы:**
+**Algorithms:**
 - Anomaly detection: Isolation Forest + Autoencoder
 - Predictive maintenance: Survival analysis (Cox model)
-- Threat assessment: Bayesian network для оценки рисков
+- Threat assessment: Bayesian network for risk evaluation
 
-**Пример:**
+**Example:**
 ```python
 class InfrastructureSentinel:
     def detect_anomaly(self, sensor_stream):
-        # Детекция аномалий через автоэнкодер
+        # Anomaly detection via autoencoder
         reconstruction_error = self.autoencoder.predict_error(sensor_stream)
         if reconstruction_error > self.threshold:
             return self.classify_anomaly(sensor_stream)
         return None
     
     def predict_failure(self, equipment_history):
-        # Коксовская модель выживания
+        # Cox proportional hazards model
         survival_prob = self.cox_model.predict(equipment_history)
         if survival_prob < 0.1:
             return "CRITICAL: Schedule maintenance within 72 hours"
@@ -137,24 +137,24 @@ class InfrastructureSentinel:
 
 ## Federated Learning
 
-Все модели обучаются **распределенно**:
-- Данные никогда не покидают локальные узлы
-- Только градиенты/веса моделей передаются через secure enclave
-- ZK-доказательства корректности обучения
+All models train **distributedly**:
+- Data never leaves local nodes
+- Only gradients/model weights transmitted via secure enclave
+- ZK-proofs of training correctness
 
 ```python
 class FederatedLearningCore:
     def local_training(self, local_data, global_model):
-        # Локальное обучение на данных Оазиса
+        # Local training on Oasis data
         local_gradients = self.compute_gradients(local_data, global_model)
         
-        # Генерация ZK-доказательства корректности
+        # Generate ZK-proof of correctness
         zk_proof = self.generate_zk_proof(local_data, local_gradients)
         
         return local_gradients, zk_proof
     
     def aggregate_models(self, gradients_list, zk_proofs):
-        # Проверка ZK-доказательств
+        # Verify ZK-proofs
         for proof in zk_proofs:
             if not self.verify_zk_proof(proof):
                 raise SecurityError("Malicious gradient detected")
@@ -163,19 +163,19 @@ class FederatedLearningCore:
         return self.fedavg(gradients_list)
 ```
 
-## Безопасность
+## Security
 
-1. **Secure Enclave:** Все критические решения принимаются внутри аппаратной изолированной среды (Intel SGX / ARM TrustZone / ATECC608A).
-2. **Formal Verification:** Критические модули (Resource Balancer, Sentinel) проходят верификацию через Coq / Isabelle.
-3. **Kill Switch:** Если AI Core обнаруживает конфликт целей (например, прибыль vs безопасность), активируется ручной режим с мультисиг-подписью.
+1. **Secure Enclave:** All critical decisions inside hardware-isolated environment (Intel SGX / ARM TrustZone / ATECC608A).
+2. **Formal Verification:** Critical modules (Resource Balancer, Sentinel) verified via Coq / Isabelle.
+3. **Kill Switch:** If AI Core detects goal conflict (e.g., profit vs safety), manual mode with multisig activates.
 
 ## Roadmap
 
-| Фаза | Компонент | Статус |
-|------|-----------|--------|
+| Phase | Component | Status |
+|-------|-----------|--------|
 | v0.1 | Architecture design | ✅ |
 | v0.2 | Production Optimizer prototype (Python + scikit-learn) | ⏳ |
-| v0.3 | Education Neural Net (персональные траектории) | ⏳ |
-| v0.4 | Resource Balancer (GPU-оптимизация) | ⏳ |
-| v0.5 | Infrastructure Sentinel (аномалии + predictive maintenance) | ⏳ |
-| v1.0 | Federated Learning + ZK-доказательства | ⏳ |
+| v0.3 | Education Neural Net (personal trajectories) | ⏳ |
+| v0.4 | Resource Balancer (GPU optimization) | ⏳ |
+| v0.5 | Infrastructure Sentinel (anomalies + predictive maintenance) | ⏳ |
+| v1.0 | Federated Learning + ZK-proofs | ⏳ |

@@ -23,11 +23,11 @@ class AssemblyGuild:
         self.attestation_verifier = attestation_verifier
 
     def register_bom(self, bom_hash: str) -> None:
-        """Регистрация эталонного хэша спецификации (Bill of Materials)."""
+        """Register reference BOM hash (Bill of Materials)."""
         self.known_bom_hashes.add(bom_hash)
 
     def compute_bom_hash(self, components: List[str]) -> str:
-        """Детерминированный хэш комплектации платы."""
+        """Deterministic hash of board component list."""
         canonical = sorted(components)
         payload = "|".join(canonical).encode("utf-8")
         return hashlib.sha256(payload).hexdigest()
@@ -71,7 +71,7 @@ class AssemblyGuild:
         self.active_devices.add(device_id)
 
     def reward_assembler(self, assembler_id: str) -> Dict[str, Any]:
-        """Karma + stable reward за собранное и активированное устройство."""
+        """Karma + stable reward for assembled and activated device."""
         return {
             "assembler": assembler_id,
             "karma": self.reward_per_device,

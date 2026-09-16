@@ -1,130 +1,130 @@
-# Schools of Universalists: Образование для свободы
+# Schools of Universalists: Education for Freedom
 
-## Философия
+## Philosophy
 
-Современная школа готовит **исполнителей** — людей, заточенных под узкие профессии, с запрограммированным мышлением. Мы создаем **универсалов** — людей с синхронизированным левым и правым полушарием, способных решать любые проблемы, видеть систему целиком и создавать новое.
+Modern school trains **executors** — people honed for narrow professions, with programmed thinking. We create **Universalists** — people with synchronized left and right hemispheres, capable of solving any problem, seeing the whole system, and creating the new.
 
-## Триада развития
+## Development Triad
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    УНИВЕРСАЛ                                │
+│                    UNIVERSALIST                             │
 ├────────────────────┬────────────────────┬───────────────────┤
-│   ЛЕВАЯ РУКА       │   АМБИДЕКСТРИЯ    │   ПРАВАЯ РУКА     │
-│   (Логика)         │   (Синхронизация)  │   (Творчество)    │
+│   LEFT HAND        │   AMBIDEXTERITY    │   RIGHT HAND      │
+│   (Logic)          │   (Synchronization)│   (Creative)      │
 │                    │                    │                   │
-│ • Математика       │ • Художественная    │ • Музыка          │
-│ • Физика          │   гимнастика       │ • Живопись        │
-│ • Программирование│ • Танцы            │ • Скульптура      │
-│ • Инженерия       │ • Спорт            │ • Дизайн          │
-│ • Логика          │ • Медитация        │ • Поэзия          │
+│ • Mathematics      │ • Rhythmic         │ • Music           │
+│ • Physics          │   Gymnastics       │ • Painting        │
+│ • Programming      │ • Dance            │ • Sculpture       │
+│ • Engineering      │ • Sports           │ • Design          │
+│ • Logic            │ • Meditation       │ • Poetry          │
 └────────────────────┴────────────────────┴───────────────────┘
 ```
 
-## Амбидекстрия как основа
+## Ambidexterity as Foundation
 
-Амбидекстрия — способность одинаково хорошо пользоваться обеими руками — это не мультик, а **нейропластичность в действии**. Универсал должен уметь:
-- Писать код левой рукой, рисовать — правой
-- Воспринимать мир через логические структуры и образы одновременно
-- Переключаться между аналитикой и интуицией за миллисекунды
+Ambidexterity — the ability to use both hands equally well — is not a cartoon trick, but **neuroplasticity in action**. A Universalist must be able to:
+- Write code with left hand, draw with right
+- Perceive world through logical structures and images simultaneously
+- Switch between analysis and intuition in milliseconds
 
-### Тренировка амбидекстрии
+### Ambidexterity Training
 
-**Фаза 0 (0-6 лет):**
-- Ежедневные занятия художественной гимнастикой (2 раза в день)
-- Игры, требующие координации обеих рук (лепка, рисование, строительство)
-- Мультисенсорное обучение: цвета + звуки + тактильные ощущения одновременно
+**Phase 0 (0-6 years):**
+- Daily rhythmic gymnastics (2×/day)
+- Games requiring both-hand coordination (modeling, drawing, building)
+- Multi-sensory learning: colors + sounds + tactile sensations simultaneously
 
-**Фаза 1 (6-12 лет):**
-- Программирование + музыка (синхронное обучение)
-- Спорт + математика (логика движения + абстрактные модели)
-- Театр + естественные науки (эмпатия + системное мышление)
+**Phase 1 (6-12 years):**
+- Programming + music (synchronous learning)
+- Sports + mathematics (movement logic + abstract models)
+- Theater + natural sciences (empathy + systems thinking)
 
-**Фаза 2 (12-18 лет):**
-- Практические проекты, требующие обеих половин мозга
-- Например: построить робота (инженерия) + записать музыку для него (творчество)
+**Phase 2 (12-18 years):**
+- Practical projects requiring both brain halves
+- Example: build a robot (engineering) + compose music for it (creative)
 
-## Универсальный учебный план
+## Universal Curriculum
 
-### Модуль 1: Основы реальности
+### Module 1: Foundations of Reality
 
-| Предмет | Логика (левое) | Творчество (правое) | Амбидекстрия |
-|---------|---------------|---------------------|--------------|
-| **Математика** | Алгебра, анализ, теория чисел | Геометрическое искусство, фракталы | Симметричные построения |
-| **Физика** | Законы Ньютона, термодинамика | Визуализация полей, симуляции | Построение физических моделей |
-| **Химия** | Стехиометрия, реакционные уравнения | Химическая кристаллография | Создание красивых соединений |
-| **Биология** | Генетика, эволюция, экология | Ботанический скетчинг, анатомия | Исследование живых систем |
-| **Информатика** | Алгоритмы, структуры данных | Генеративный арт, игры | Программирование глазами |
+| Subject | Logic (Left) | Creative (Right) | Ambidexterity |
+|---------|--------------|------------------|---------------|
+| **Mathematics** | Algebra, analysis, number theory | Geometric art, fractals | Symmetric constructions |
+| **Physics** | Newton's laws, thermodynamics | Field visualization, simulations | Physical model building |
+| **Chemistry** | Stoichiometry, reaction equations | Chemical crystallography | Creating beautiful compounds |
+| **Biology** | Genetics, evolution, ecology | Botanical sketching, anatomy | Living systems research |
+| **Informatics** | Algorithms, data structures | Generative art, games | Programming by eye |
 
-### Модуль 2: Практическое созидание
+### Module 2: Practical Creation
 
-| Проект | Описание | Навыки |
-|--------|----------|--------|
-| **Оазис-биотоп** | Создание замкнутой экосистемы | Экология + инженерия + дизайн |
-| **Робот-помощник** | Постройка робота для помощи пожилым | Программирование + механика + эмпатия |
-| **Энергия будущего** | Создание солнечной/ветровой установки | Физика + электроника + инженерия |
-| **Кибер-сад** | Автоматизированное фермерство | IoT + биология + дизайн |
-| **Звучание мысли** | Преобразование ЭЭГ в музыку | Нейроинтерфейсы + музыка + математика |
+| Project | Description | Skills |
+|---------|-------------|--------|
+| **Oasis Biotope** | Creating closed ecosystem | Ecology + engineering + design |
+| **Helper Robot** | Building robot for elderly care | Programming + mechanics + empathy |
+| **Future Energy** | Building solar/wind installation | Physics + electronics + engineering |
+| **Cyber-Garden** | Automated farming | IoT + biology + design |
+| **Sound of Thought** | Converting EEG to music | Neurointerfaces + music + mathematics |
 
-### Модуль 3: Социальная инженерия
+### Module 3: Social Engineering
 
-| Тема | Описание |
-|------|----------|
-| **Кибернетическое мышление** | Как работает ОГАС 2.0, почему рынок неэффективен |
-| **Этика созидания** | Зачем мы строим Оазисы, что такое «польза» |
-| **Коммуникация без конфликтов** | Ненасильственное общение, медиация, фасилитация |
-| **История тупиков** | Почему империи рушатся, как избежать повторения |
-| **Международное право** | Правовые основы Ковчега, дипломатия Оазисов |
+| Topic | Description |
+|-------|-------------|
+| **Cybernetic Thinking** | How OGAS 2.0 works, why markets are inefficient |
+| **Ethics of Creation** | Why we build Oases, what is "utility" |
+| **Conflict-Free Communication** | Non-violent communication, mediation, facilitation |
+| **History of Dead Ends** | Why empires fall, how to avoid repetition |
+| **International Law** | Legal foundations of the Ark, Oasis diplomacy |
 
-## Школы-Оазисы
+## Oasis Schools
 
-Физические пространства, где происходит обучение:
+Physical spaces where learning happens:
 
-### 1. Seed School (Начальная)
-- Возраст: 0-12 лет
-- Формат: mixed-age groups, no grades
-- Метод: Montessori + Waldorf +个性化的 AI-траектории
-- Амбидекстрия: 4 часа в день художественной гимнастики и спорта
+### 1. Seed School (Primary)
+- Age: 0-12 years
+- Format: mixed-age groups, no grades
+- Method: Montessori + Waldorf + personalized AI trajectories
+- Ambidexterity: 4 hours/day rhythmic gymnastics and sports
 
-### 2. Forge School (Средняя)
-- Возраст: 12-18 лет
-- Формат: проектное обучение, 80% времени — практика
-- Метод: Mastery-based, нет экзаменов, только защита проектов
-- Амбидекстрия: 2 часа в день спорта + 2 часа творчества
+### 2. Forge School (Secondary)
+- Age: 12-18 years
+- Format: project-based learning, 80% practice
+- Method: Mastery-based, no exams, only project defenses
+- Ambidexterity: 2 hours/day sports + 2 hours creative
 
-### 3. Nexus Academy (Высшая)
-- Возраст: 18+
-- Формат: исследовательские группы, работа над реальными проблемами Оазиса
-- Метод: peer-to-peer learning, нет преподавателей, есть наставники
-- Амбидекстрия: непрерывная, интегрированная в все проекты
+### 3. Nexus Academy (Higher)
+- Age: 18+
+- Format: research groups, working on real Oasis problems
+- Method: peer-to-peer learning, no teachers, only mentors
+- Ambidexterity: continuous, integrated into all projects
 
-## Оценка прогресса
+## Progress Assessment
 
-Нет оценок в привычном смысле. Вместо них:
+No grades in the conventional sense. Instead:
 
-| Метрика | Описание |
-|---------|----------|
-| **Karma Index** | Сумма полезных вкладов в общество (R(t)) |
-| **Skill Graph** | Граф освоенных компетенций (визуализация) |
-| **Creativity Score** | Способность генерировать новые идеи (оценивается AI + peer review) |
-| **Collaboration Rating** | Умение работать в команде (оценивается наставниками) |
-| **Physical Vitality** | Здоровье, физическая форма, амбидекстрия |
+| Metric | Description |
+|--------|-------------|
+| **Karma Index** | Sum of useful contributions to society (R(t)) |
+| **Skill Graph** | Graph of mastered competencies (visualization) |
+| **Creativity Score** | Ability to generate novel ideas (AI + peer review) |
+| **Collaboration Rating** | Teamwork ability (mentor-assessed) |
+| **Physical Vitality** | Health, fitness, ambidexterity |
 
-## Выпускник Universalist
+## Universalist Graduate
 
-Человек, который:
-- Может починить двигатель, написать symphony, запрограммировать нейросеть и вырастить сад
-- Мыслит системно, видит взаимосвязи между всем
-- Не боится неопределенности, способен учиться новому за 24 часа
-- Сотрудничает вместо конкуренции
-- Понимает, что его свобода ограничена только законами физики и уважением к другим
+A human who:
+- Can fix an engine, write a symphony, program a neural net, and grow a garden
+- Thinks systemically, sees interconnections between everything
+- Fears no uncertainty, can learn anything new in 24 hours
+- Collaborates instead of competing
+- Understands their freedom is limited only by physics and respect for others
 
 ## Roadmap
 
-| Фаза | Действие |
-|------|----------|
-| v0.1 | Разработка учебного плана и методологии |
-| v0.2 | Создание AI-движка для персональных траекторий |
-| v0.3 | Пилотная Seed School (10 детей) |
-| v0.4 | Масштабирование до 100 школ |
-| v1.0 | Глобальная сеть Schools of Universalists |
+| Phase | Action |
+|-------|--------|
+| v0.1 | Curriculum and methodology development |
+| v0.2 | AI engine for personal trajectories |
+| v0.3 | Pilot Seed School (10 children) |
+| v0.4 | Scale to 100 schools |
+| v1.0 | Global Schools of Universalists network |
