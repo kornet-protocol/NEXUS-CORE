@@ -1,3 +1,4 @@
+<img width="1024" height="1024" alt="Image_ngqtchngqtchngqt" src="https://github.com/user-attachments/assets/619a1c31-3344-4728-8ada-9b647ac70821" />
 # 🌍 NEXUS: The KORNET Core Protocol
 
 **NEXUS** is an open-source, decentralized operating system for planetary repair, resource balancing, and gamified volunteering. We replace political bureaucracy with cybernetic logistics (OGAS 2.0) and speculative capitalism with a Phase Economy.
