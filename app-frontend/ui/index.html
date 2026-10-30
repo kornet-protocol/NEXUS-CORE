@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS-CORE | KORNET Protocol</title>
+    <style>
+        body { font-family: 'Courier New', monospace; background: #0a0a0a; color: #00ff41; margin: 0; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        h1 { border-bottom: 1px solid #00ff41; padding-bottom: 10px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
+        .card { border: 1px solid #00ff41; padding: 15px; background: #0d0d0d; }
+        .card h3 { margin-top: 0; color: #00ff41; }
+        .status { color: #ffff00; }
+        .success { color: #00ff41; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>NEXUS-CORE // KORNET Protocol Interface</h1>
+        <p>Decentralized Physical Infrastructure for Planetary Repair</p>
+        <div class="grid">
+            <div class="card">
+                <h3>Vector A: Identity</h3>
+                <p>Proof-of-Unique-Human via Web-of-Trust</p>
+                <p class="status">Status: <span class="success">ACTIVE</span></p>
+            </div>
+            <div class="card">
+                <h3>Vector B: Oracles</h3>
+                <p>Hardware Root of Trust + Optimistic Consensus</p>
+                <p class="status">Status: <span class="success">ACTIVE</span></p>
+            </div>
+            <div class="card">
+                <h3>Vector C: Privacy</h3>
+                <p>ZK-SNARKs / ZK-STARKs</p>
+                <p class="status">Status: <span class="success">ACTIVE</span></p>
+            </div>
+            <div class="card">
+                <h3>Vector D: Mesh</h3>
+                <p>LoRaWAN / Libp2p / Bluetooth Mesh</p>
+                <p class="status">Status: <span class="success">ACTIVE</span></p>
+            </div>
+        </div>
+        <div class="card" style="margin-top: 20px;">
+            <h3>Genesis Protocol</h3>
+            <pre id="genesis-output">Initializing...</pre>
+        </div>
+    </div>
+    <script>
+        // Placeholder JS for Genesis Protocol output
+        document.getElementById('genesis-output').textContent = 'NEXUS-CORE v0.1.0 Ready';
+    </script>
+</body>
+</html>

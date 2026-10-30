@@ -1,0 +1,113 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  python-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install flake8
+      - run: flake8 core-engine/ validators/ identity-zkp/ scripts/
+
+  python-syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python3 -m py_compile core-engine/genesis_protocol.py
+      - run: python3 -m py_compile core-engine/reputation_decay.py
+      - run: python3 -m py_compile core-engine/graceful_degradation.py
+      - run: python3 -m py_compile core-engine/entropy_filter.py
+      - run: python3 -m py_compile validators/social_awakening.py
+      - run: python3 -m py_compile validators/eco_bio_vision.py
+      - run: python3 -m py_compile validators/infrastructure_scan.py
+      - run: python3 -m py_compile validators/science_peer_review.py
+      - run: python3 -m py_compile validators/dispute_arbiter.py
+      - run: python3 -m py_compile identity-zkp/web_of_trust.py
+      - run: python3 -m py_compile scripts/deploy_purge.py
+      - run: python3 -m py_compile core-engine/serve.py
+      - run: python3 -m py_compile core-engine/production_config.py
+      - run: python3 -m py_compile core-engine/persistence.py
+      - run: python3 -m py_compile core-engine/logging.py
+      - run: python3 -m py_compile core-engine/exceptions.py
+      - run: python3 -m py_compile core-engine/event_attestation.py
+      - run: python3 -m py_compile tests/test_event_attestation.py
+      - run: python3 -m unittest discover -s tests -v
+
+  rust-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          toolchain: stable
+      - name: Cache cargo registry
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            core-engine/target
+            identity-zkp/target
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+      - run: rustc --version && cargo --version
+      - run: cd core-engine && cargo check 2>&1
+      - run: cd identity-zkp && cargo check 2>&1
+
+  go-check:
+    runs-on: ubuntu-latest
+    env:
+      GOPRIVATE: github.com/kornet-protocol/*
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.22"
+          cache: true
+      - run: go version
+      - run: cd iot-depin-network/aggregator && go mod download
+      - run: cd iot-depin-network/aggregator && go build -v ./... 2>&1
+      - run: cd iot-depin-network/aggregator && go test -v ./... 2>&1
+
+  firmware-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install platformio
+      - run: pio platform install espressif32
+      - run: pio run --project-dir iot-depin-network/firmware
+
+  markdown-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: npm install -g markdownlint-cli2
+      - run: markdownlint-cli2 "**/*.md" "#node_modules" --config .markdownlint.json
+
+  # Branding check - verify logo exists and is valid SVG
+  branding-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify logo exists
+        run: test -f assets/logo.svg
+      - name: Validate SVG structure
+        run: python3 -c "import xml.etree.ElementTree as ET; ET.parse('assets/logo.svg')"
+      - name: Check logo in README
+        run: grep -q "assets/logo.svg" README.md

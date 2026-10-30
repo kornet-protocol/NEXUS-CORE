@@ -1,0 +1,21 @@
+# Auto-detect text files and normalize line endings
+* text=auto
+
+# Python files should use LF
+*.py text eol=lf
+
+# Rust files should use LF
+*.rs text eol=lf
+
+# Go files should use LF
+*.go text eol=lf
+
+# Solidity files should use LF
+*.sol text eol=lf
+
+# Markdown files should use LF
+*.md text eol=lf
+
+# YAML files should use LF
+*.yml text eol=lf
+*.yaml text eol=lf
