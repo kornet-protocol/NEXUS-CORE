@@ -5,6 +5,9 @@ edition = "2021"
 authors = ["NEXUS-CORE Contributors"]
 description = "NEXUS KORNET Core Engine - Rust components"
 
+[lib]
+path = "src/resource_balancer.rs"
+
 [dependencies]
 serde = { version = "1.0", features = ["derive"] }
 thiserror = "1.0"

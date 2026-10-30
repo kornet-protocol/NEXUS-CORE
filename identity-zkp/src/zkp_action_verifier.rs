@@ -74,13 +74,12 @@ impl GoodDeedCircuit {
 
 // Implement ConstraintSynthesizer trait for arkworks Groth16 compatibility (arkworks 0.4 API)
 impl ConstraintSynthesizer<Fr> for GoodDeedCircuit {
-    fn generate_constraints(self, cs: ConstraintSystemRef<Fr>) -> Result<(), SynthesisError> {
+    fn generate_constraints(self, _cs: ConstraintSystemRef<Fr>) -> Result<(), SynthesisError> {
         // Scaffold implementation - real circuit needs ark_r1cs_std allocations
         // - Allocate action_category, timestamp, action_secret as witnesses
         // - Enforce action_secret == public_secret (public input)
         // - Enforce timestamp bounds (>= 0, < max_timestamp)
         // For now, this is a no-op scaffold that compiles
-        let _ = cs;
         Ok(())
     }
 }

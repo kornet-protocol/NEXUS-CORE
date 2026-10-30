@@ -85,10 +85,13 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
-      - run: pip install platformio
-      - run: pio platform install espressif32
-      - run: pio run --project-dir iot-depin-network/firmware
+          python-version: '3.11'
+      - name: Install PlatformIO
+        run: |
+          pip install --upgrade platformio
+          pio platform install espressif32
+      - name: Build Firmware
+        run: cd iot-depin-network && pio run
 
   markdown-lint:
     runs-on: ubuntu-latest

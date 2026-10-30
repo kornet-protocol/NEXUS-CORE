@@ -5,6 +5,9 @@ edition = "2021"
 authors = ["NEXUS-CORE Contributors"]
 description = "NEXUS ZK Proof Verifier"
 
+[lib]
+path = "src/zkp_action_verifier.rs"
+
 [dependencies]
 # Using arkworks ecosystem instead of deprecated bellman
 ark-bn254 = "0.4"
