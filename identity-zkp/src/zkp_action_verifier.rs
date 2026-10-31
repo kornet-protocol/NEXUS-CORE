@@ -10,12 +10,11 @@
 // =====================================================================
 
 use ark_bn254::{Bn254, Fr};
-use ark_ec::CurveGroup;
-use ark_ff::Zero;
 use ark_groth16::Groth16;
 use ark_relations::r1cs::{ConstraintSynthesizer, ConstraintSystemRef, SynthesisError};
-use ark_serialize::CanonicalSerialize;
-use ark_std::rand::RngCore;
+use ark_serialize::{CanonicalSerialize, CanonicalDeserialize};
+use ark_snark::SNARK;
+use ark_std::rand::{RngCore, CryptoRng};
 use thiserror::Error;
 
 #[derive(Debug, Error)]
@@ -38,7 +37,7 @@ pub struct GoodDeedCircuit {
 }
 
 impl GoodDeedCircuit {
-    pub fn generate_proof<R: RngCore>(
+    pub fn generate_proof<R: RngCore + CryptoRng>(
         &self,
         rng: &mut R,
         proving_key: &ark_groth16::ProvingKey<Bn254>,
@@ -55,7 +54,7 @@ impl GoodDeedCircuit {
         public_inputs: &[Fr],
     ) -> Result<bool, ZKPError> {
         let pvk = ark_groth16::PreparedVerifyingKey::from(verifying_key.clone());
-        Groth16::<Bn254>::verify_with_processed_vk(&pvk, proof, public_inputs)
+        Groth16::<Bn254>::verify_with_processed_vk(&pvk, public_inputs, proof)
             .map_err(|e| ZKPError::Verification(e.to_string()))
     }
 
