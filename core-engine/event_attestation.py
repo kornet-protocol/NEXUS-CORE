@@ -41,7 +41,7 @@ class WitnessSignature:
 class IoTCorroboration:
     sensor_id: str
     telemetry_hash: str
-    sensor_type: str  # "temperature", "vitals", "gas", "motion"
+    sensor_type: str
     confidence: float
     timestamp: float = field(default_factory=time.time)
 
@@ -55,7 +55,7 @@ class EventClaim:
     created_at: float
     witness_signatures: List[WitnessSignature] = field(default_factory=list)
     iot_corroborations: List[IoTCorroboration] = field(default_factory=list)
-    status: str = "OPEN"  # OPEN, WITNESS_COLLECTING, IOT_CORROBORATING, FINALIZED, REJECTED
+    status: str = "OPEN"
     verification_score: float = 0.0
     gini_penalty: float = 0.0
 
@@ -68,7 +68,6 @@ class EventAttestation:
     Requires dynamic witness thresholds and IoT corroboration for high-risk deeds.
     """
 
-    # Minimum witness thresholds per event type
     WITNESS_THRESHOLDS = {
         EventType.EMERGENCY_RESCUE: 3,
         EventType.MEDICAL_AID: 3,
@@ -76,7 +75,6 @@ class EventAttestation:
         EventType.MUTUAL_AID: 1,
     }
 
-    # Base verification scores per event type (before witness/IoT bonuses)
     BASE_VERIFICATION_SCORES = {
         EventType.EMERGENCY_RESCUE: 0.7,
         EventType.MEDICAL_AID: 0.7,
@@ -84,14 +82,13 @@ class EventAttestation:
         EventType.MUTUAL_AID: 0.5,
     }
 
-    # IoT corroboration bonus per sensor type
     IOT_SENSOR_BONUSES = {
-        "temperature": 0.05,      # Fire rescue: temperature sensors
-        "vitals": 0.10,           # Medical aid: heart rate, SpO2
-        "gas": 0.08,              # Hazardous environment: CO, CO2, CH4
-        "motion": 0.03,           # Movement/presence detection
-        "pressure": 0.05,         # Structural integrity
-        "humidity": 0.02,         # Environmental conditions
+        "temperature": 0.05,
+        "vitals": 0.10,
+        "gas": 0.08,
+        "motion": 0.03,
+        "pressure": 0.05,
+        "humidity": 0.02,
     }
 
     def __init__(
@@ -114,15 +111,6 @@ class EventAttestation:
         context: Dict[str, Any],
         sensor_hashes: Optional[List[str]] = None,
     ) -> EventClaim:
-        """
-        Create a new event claim for human-to-human deed attestation.
-
-        Args:
-            event_type: Type of deed (EMERGENCY_RESCUE, MEDICAL_AID, etc.)
-            participant_id: Soulbound identity of the claimant
-            context: Free-form context (location description, description of deed, etc.)
-            sensor_hashes: Optional list of IoT sensor data hashes pre-bound to event
-        """
         claim_id = f"evt_{uuid.uuid4().hex[:16]}"
 
         claim = EventClaim(
@@ -133,7 +121,6 @@ class EventAttestation:
             created_at=time.time(),
         )
 
-        # Pre-bind IoT sensor hashes if provided
         if sensor_hashes:
             for sensor_hash in sensor_hashes:
                 claim.iot_corroborations.append(IoTCorroboration(
@@ -159,12 +146,6 @@ class EventAttestation:
         signature: str,
         witness_location_zk: Optional[str] = None,
     ) -> Dict[str, Any]:
-        """
-        Add a witness signature to an event claim.
-
-        Witness must be a verified human (via WebOfTrust) and provide ZK location proof
-        for high-risk events (rescue, medical).
-        """
         claim = self.claims.get(claim_id)
         if not claim:
             return {"status": "REJECTED", "reason": "Claim not found"}
@@ -191,7 +172,6 @@ class EventAttestation:
             total=len(claim.witness_signatures),
         )
 
-        # Check if witness threshold met
         threshold = self.min_witness_thresholds.get(claim.event_type, 1)
         if len(claim.witness_signatures) >= threshold:
             return {
@@ -214,11 +194,6 @@ class EventAttestation:
         sensor_type: str,
         confidence: float,
     ) -> Dict[str, Any]:
-        """
-        Corroborate event claim with IoT sensor telemetry.
-
-        Binds environmental/equipment sensor readings to verify high-risk deeds.
-        """
         claim = self.claims.get(claim_id)
         if not claim:
             return {"status": "REJECTED", "reason": "Claim not found"}
@@ -249,19 +224,12 @@ class EventAttestation:
         return {"status": "IOT_ADDED", "total_corroborations": len(claim.iot_corroborations)}
 
     def _calculate_gini_penalty(self, claim: EventClaim) -> float:
-        """
-        Calculate Gini coefficient penalty for circular witness rings (collusion prevention).
-
-        If witnesses all endorse each other in a tight cluster, penalty increases.
-        """
         if not self.enable_gini_collusion_check:
             return 0.0
 
         if len(claim.witness_signatures) < 2:
             return 0.0
 
-        # Simple proxy: check if witnesses are the same small set across recent claims
-        # In production, this would query the WebOfTrust graph for clique detection
         witness_pubkeys = [w.witness_pubkey for w in claim.witness_signatures]
         unique_witnesses = len(set(witness_pubkeys))
         total_witnesses = len(witness_pubkeys)
@@ -269,52 +237,32 @@ class EventAttestation:
         if total_witnesses == 0:
             return 0.0
 
-        # Gini-like concentration: 1.0 = all same witness, 0.0 = all unique
         concentration = 1.0 - (unique_witnesses / total_witnesses)
-        # Scale to max 0.3 penalty (30% reduction in verification score)
         return concentration * 0.3
 
     def _calculate_verification_score(self, claim: EventClaim) -> float:
-        """
-        Calculate final verification score V_k for the event claim.
-
-        Components:
-        - Base score for event type
-        - Witness bonus (each witness above threshold adds confidence)
-        - IoT corroboration bonus (sensor-type specific)
-        - Gini penalty for collusion
-        """
         base_score = self.BASE_VERIFICATION_SCORES.get(claim.event_type, 0.5)
 
-        # Witness bonus
         threshold = self.min_witness_thresholds.get(claim.event_type, 1)
         witness_count = len(claim.witness_signatures)
         witness_bonus = 0.0
         if witness_count > threshold:
-            # Each additional witness above threshold adds 0.02, max 0.15
             witness_bonus = min(0.15, (witness_count - threshold) * 0.02)
         elif witness_count == threshold:
-            witness_bonus = 0.05  # Meeting threshold exactly
+            witness_bonus = 0.05
 
-        # IoT corroboration bonus
         iot_bonus = 0.0
         for corr in claim.iot_corroborations:
             sensor_bonus = self.IOT_SENSOR_BONUSES.get(corr.sensor_type, 0.01)
             iot_bonus += sensor_bonus * corr.confidence
-        iot_bonus = min(0.20, iot_bonus)  # Cap at 20%
+        iot_bonus = min(0.20, iot_bonus)
 
-        # Gini penalty
         gini_penalty = self._calculate_gini_penalty(claim)
 
         final_score = base_score + witness_bonus + iot_bonus - gini_penalty
         return max(0.0, min(1.0, final_score))
 
     def finalize_claim(self, claim_id: str) -> Dict[str, Any]:
-        """
-        Finalize the event claim and compute verification score V_k.
-
-        Returns contribution data ready for reputation_decay.py processing.
-        """
         claim = self.claims.get(claim_id)
         if not claim:
             return {"status": "REJECTED", "reason": "Claim not found"}
@@ -325,7 +273,6 @@ class EventAttestation:
                 "verification_score": claim.verification_score,
             }
 
-        # Check minimum witness threshold
         threshold = self.min_witness_thresholds.get(claim.event_type, 1)
         if len(claim.witness_signatures) < threshold:
             claim.status = "REJECTED"
@@ -340,7 +287,6 @@ class EventAttestation:
                 "reason": f"Insufficient witnesses: {len(claim.witness_signatures)}/{threshold}",
             }
 
-        # Calculate verification score
         verification_score = self._calculate_verification_score(claim)
         gini_penalty = self._calculate_gini_penalty(claim)
 
@@ -348,8 +294,6 @@ class EventAttestation:
         claim.gini_penalty = gini_penalty
         claim.status = "FINALIZED"
 
-        # Prepare contribution for reputation engine
-        # Map event type to reputation category
         category_map = {
             EventType.EMERGENCY_RESCUE: "life_saved",
             EventType.MEDICAL_AID: "life_saved",
@@ -386,7 +330,6 @@ class EventAttestation:
         }
 
     def get_claim_status(self, claim_id: str) -> Optional[Dict[str, Any]]:
-        """Get current status of an event claim."""
         claim = self.claims.get(claim_id)
         if not claim:
             return None
@@ -410,11 +353,6 @@ class EventAttestation:
         caste: str = "default",
         synthesis_multiplier: float = 1.0,
     ) -> Dict[str, Any]:
-        """
-        Process finalized claim into reputation engine.
-
-        Returns updated ReputationState with new kinetic and HWM values.
-        """
         finalize_result = self.finalize_claim(claim_id)
         if finalize_result["status"] != "FINALIZED":
             return {
@@ -424,7 +362,6 @@ class EventAttestation:
 
         contribution = finalize_result["contribution"]
 
-        # Add to existing contributions and recalculate reputation
         all_contributions = existing_contributions + [contribution]
 
         new_kinetic = calculate_reputation(
@@ -440,3 +377,4 @@ class EventAttestation:
             "new_kinetic_reputation": new_kinetic,
             "contribution": contribution,
         }
+# trailing newline
