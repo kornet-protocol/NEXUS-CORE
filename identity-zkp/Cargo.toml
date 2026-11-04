@@ -8,7 +8,7 @@ description = "NEXUS ZK Proof Verifier"
 [dependencies]
 # Using arkworks ecosystem instead of deprecated bellman
 ark-bn254 = "0.4"
-ark-ec = "0.4"
+ark-ec = "0.6"
 ark-ff = "0.4"
 ark-groth16 = "0.4"
 ark-relations = "0.4"
