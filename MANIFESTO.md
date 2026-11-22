@@ -15,186 +15,214 @@
 
 ---
 
-## PART 1. DIAGNOSIS: THE TRAP WE INHERITED
+## PART 1. THE DIAGNOSIS: WHY LEGACY CIVILIZATION IS COLLAPSING
 
-The promise of decentralization was captured by the very forces it sought to displace. What began as a movement for monetary sovereignty became a casino of meme coins, speculative NFTs, and DeFi pyramids — new bureaucracies of code and token that solve nothing in the physical world.
+### The Psychological Trap: Manufacturing Damaged Minds
+Modern society systematically produces traumatized, fragmented human beings:
 
-Meanwhile, the legacy system persists: a **coordination failure** where human potential is allocated by capital access rather than capability.
+- **Absent parenting**: Both parents forced into wage slavery; children raised by screens, algorithms, and exhausted strangers
+- **Hyper-competition from birth**: Standardized testing, ranking, "achievement" as identity — before a child knows who they are
+- **Media noise & limbic hijacking**: Algorithms optimized for outrage, fear, and short-term gratification destroy attention spans and critical thinking
+- **Survival anxiety as baseline**: Food, shelter, healthcare, education made conditional — the nervous system never learns safety
 
-- A student painting a masterpiece is told "that's not a business proposal."
-- An engineer building a water purifier hears "why do it for free?"
-- A teacher shaping minds is measured by salary, not impact.
+**Result**: A population with atrophied prefrontal cortices, hyperactive amygdalas, zero trust, and no capacity for long-term thinking. This is not accidental. A fearful, fragmented mind is easier to manipulate, exploit, and control.
 
-The system rewards **rent-seeking** — reselling, gatekeeping, inflating bubbles — because genuine creation doesn't generate quick returns for those who produce nothing. We inherit a world where:
+### The Monetary Trap: Monetizing Survival Itself
+Capitalist systems have committed the ultimate category error: **they put a price on existence**.
 
-- Coordination runs on exponential debt
-- Scarcity is manufactured to sustain price
-- The basics of survival (food, shelter, medicine, education) are conditional
-- Politics is a theater of distraction; real power lies in logistics and energy
+- **Food, water, shelter, medicine, education** — the prerequisites for *any* human agency — are gated behind fiat currency
+- **Debt-based money** requires exponential growth on a finite planet; ecological collapse is a feature, not a bug
+- **Artificial scarcity** maintained through IP laws, planned obsolescence, regulatory capture, and speculative hoarding
+- **Human potential allocated by capital access**, not capability — the engineer building water purifiers starves while the rent-seeker buys yachts
 
-**This is not a bug. This is the operating system of extraction.**
+### The Synthesis: You Cannot Build Post-Scarcity With Scarcity-Damaged Minds
+The fundamental error of every revolutionary movement in history: **they tried to change the economic system without healing the human beings inside it.**
 
----
+- A mind shaped by survival fear *will* recreate scarcity, even in abundance
+- A mind fragmented by specialization *cannot* see the whole system it's embedded in
+- A mind trained to compete *will* defect from cooperation the moment it's advantageous
 
-## PART 2. THE SYSTEM: INCENTIVE MISALIGNMENT
-
-Current economic models suffer from a fundamental **Incentive Misalignment**:
-
-| Current System | NEXUS Phase Economy |
-|----------------|---------------------|
-| Value = Market Price × Speculation | **Value = Utility × Effort × Trust** |
-| Rewards rent-seeking & financial engineering | Rewards verified physical creation |
-| Scarcity manufactured for profit | Abundance engineered via automation |
-| Survival conditional on labor market | Survival unconditional (Zero-Floor) |
-| Status = Transferable wealth (buy/sell/inherit) | Status = Non-transferable Soulbound reputation |
-| Gerontocracy: wealth compounds forever | Thermodynamics: status decays without contribution |
-| Oligarchy: capital captures governance | Anti-collusion: Gini coefficient zeroes cartel rewards |
-
-We replace the debt-based, scarcity-driven, rent-seeking economy with a **Phase Economy** where:
-
-```
-Value = Utility × Effort × Trust
-```
-
-No stocks. No speculative dividends. No "governance tokens." Only **real physical outcomes**: forests planted, homes built, lives saved, surgeries performed, knowledge transferred, ecosystems restored, reactors ignited.
+**NEXUS solves both simultaneously**: Material security (Zero-Floor) + Psychological integration (Universalism) + Algorithmic invariants that make exploitation mathematically impossible.
 
 ---
 
-## PART 3. REVOLUTION IN CODE: THE MATHEMATICAL APPARATUS
+## PART 2. THE MATERIAL FOUNDATION: ZERO-FLOOR GUARANTEE & RWA OASES
 
-NEXUS-CORE is **not a "new cryptocurrency."** It is a **mathematical apparatus for resetting civilization's economy from a clean slate**.
+### Breaking the Survival Fear: How Oases Crush Marginal Cost by 70–80%
+A **Seed Node** (see `docs/hardware/BOM_oasis_seed.md`) is a $1,500 hardware kit that, when deployed by a local guild, creates a **Micro-Oasis** serving 10–30 people:
 
-### The Reputation Formula
+| Subsystem | Technology | Cost Reduction Mechanism |
+|-----------|------------|--------------------------|
+| **Energy** | 400W PV + 1.28 kWh LFP + 30A MPPT | No grid fees, no fossil fuels, 25-year panel warranty |
+| **Food** | Automated vertical hydroponics + peristaltic dosing + PAR sensors | 90% less water, 5× yield/m², year-round harvest |
+| **Water** | pH/TDS monitoring + ultrasonic tank level + solenoid irrigation | Closed-loop, zero waste, real-time nutrient balancing |
+| **Manufacturing** | Ender-3 V3 SE + Pinecil + open schematics | Print replacement parts, sensor enclosures, bracketry on-site |
+| **Compute** | Orange Pi 5 + SQLite WAL + Leontief balancer | Runs OGAS 2.0 locally; no cloud dependency |
 
+**Total BOM: ~$1,500** — all commodity hardware from AliExpress/LCSC/local markets. No proprietary controllers. No vendor lock-in.
+
+### Why It's Not a Utopia: Thermodynamics, Not Angels
+Utopia relies on people "becoming better." NEXUS relies on **closed-loop thermodynamics and strict code invariants**:
+
+- **Even if someone is lazy, cynical, or malicious** — the system feeds and houses them unconditionally (**Right to Inaction**)
+- **When survival is guaranteed**, the pathology of scarcity vanishes: no incentive to steal, scam, hoard, or destroy
+- **The protocol's invariants are enforced by code**, not morality: ATECC608A signatures prevent sensor spoofing; Gini coefficient zeroes cartel rewards; thermodynamic decay prevents status hoarding
+- **Defection is mathematically unprofitable**: The only way to grow R(t) is verified creation; the only way to protect long-horizon R&D is cross-domain peer staking with slashing
+
+**The Zero-Floor is not charity. It is the baseline thermodynamic state of an automated system.** Just as a refrigerator doesn't "decide" to keep food cold — it follows the laws of physics — an Oasis doesn't "decide" to feed people. It follows the Leontief matrix: energy → food → humans → more energy.
+
+---
+
+## PART 3. BIOLOGICAL & MENTAL EVOLUTION: UNIVERSALISM & AMBIDEXTERITY
+
+### The Idiot Factory vs. The Universalist Forge
+Modern schooling is an **idiot factory**: it takes holistic, curious children and fragments them into "math people" or "art people," "STEM" or "humanities," destroying the corpus callosum's integrative capacity.
+
+**NEXUS replaces this with the Schools of Universalists and Ambidexter Academy:**
+
+| Phase | Age | Method | Hemisphere Focus |
+|-------|-----|--------|------------------|
+| **Seed** | 0–12 | Montessori + Waldorf + AI trajectories | Rhythmic gymnastics 2×/day, bilateral drawing, music + math in parallel |
+| **Forge** | 12–18 | Project-based, 80% practice | Real Oasis projects: build a robot + compose its music + grow its food |
+| **Nexus Academy** | 18+ | Peer-to-peer, mentors not teachers | Continuous synthesis: Skill Graph + Karma Index + Creativity Score |
+
+**No grades. No standardized tests. No "subjects."** Only **branches**:
+- **Left (Logic)**: Bio-Engineering, Quantum Logistics, Robotics, Programming, Mathematics, Physics, Chemistry
+- **Right (Creative)**: Music, Sculpture, Poetry, Painting, Dance, Spatial Design, Empathy
+- **Synthesis (Cross-branch)**: Neuro-Architecture, Cyber-Garden, Eco-Design, Social Engineering
+
+### The Synthesis Multiplier (×5 in Code)
+The protocol **algorithmically rewards cross-domain mastery** — not as a nice-to-have, but as a mathematical imperative:
+
+```python
+# core-engine/skill_tree.py
+SYNTHESIS_MULTIPLIER = 5.0
+
+def synthesize_bonus(self, user_id: str) -> float:
+    skills = self.get_skills(user_id)
+    left_count = len(skills & LEFT_HEMISPHERE)
+    right_count = len(skills & RIGHT_HEMISPHERE)
+    cross_links = min(left_count, right_count)
+    return SYNTHESIS_MULTIPLIER if cross_links > 0 else 1.0
 ```
-R_i(t) = Σ_k Ω_k × V_k × e^(−λ_k(t−t_k)) × (1 − Gini(C_k))
-```
 
-Where:
+A human who only codes → status grows at **×1**.
+A human who codes + grows food + plays violin → status grows at **×5**.
 
-- **Ω_k** — Base utility weight of action k (life_saved = 1000, tree_planted = 10, teaching = 150, scientific_breakthrough = 800)
-- **V_k** — Verification score [0,1] (ZKP + Hardware sensor signature + Mesh consensus)
-- **λ_k** — Category-specific decay coefficient (teacher: 0.0004, athlete: 0.004, builder: 0.0005)
-- **Gini(C_k)** — Anti-collusion coefficient: if a closed circle endorses only itself, reward → 0
+This is not gamification. This is **neuroplasticity enforcement**. The system forces the brain to form new inter-hemispheric connections because that is the only evolutionary path to solving the polycrisis. Specialization is extinction. **Ambidexterity is survival.**
 
-**Status = Access Key, not bank balance.** You cannot transfer your status to another wallet, buy a yacht with it, or inherit it. It is **hard-bound to the human soul — Soulbound**. If you stop creating, your status gradually melts away.
+---
 
-### Four Anti-Mechanisms
+## PART 4. WHAT IS STATUS/REPUTATION R(t)? (NOT MONEY, NOT POWER)
 
-#### 1. Anti-Grinding: Diminishing Returns
-If you clean 1 bag of trash → that's a deed.
-If you clean 100 bags in a day → the system lowers the coefficient: "Enough grinding. Go learn something new, develop yourself."
+### Status = Creation Access, Not Consumption Rights
+In capitalism, money buys **luxury and power over people**. In NEXUS, status R(t) is a **non-transferable Soulbound Token (SBT)** that acts as a **key to the workshop**, not a bank account.
 
-#### 2. Anti-Oligarchy: Cross-Domain Gini
-If a closed clan tries to monopolize good deeds: the Gini coefficient spikes → reward zeroed out.
-The only way to grow is to **engage newcomers and share tasks across domains**.
+| Capitalism | NEXUS |
+|------------|-------|
+| Buy a bigger mansion | Access a larger laboratory |
+| Hire servants | Priority allocation of rare isotopes |
+| Speculate on assets | Book time on quantum processors |
+| Inherit wealth | Propose planetary-scale infrastructure |
+| Rent-seek | Coordinate species-level survival projects |
 
-#### 3. Anti-Gerontocracy: Thermodynamics of Status
+**High status gives you the capacity to create at scale for the species.** It does not buy comfort — the daily experience (food, housing, healthcare, education) is identical for everyone at the Zero-Floor.
+
+### Why It's Safe: Thermodynamic Decay
 ```
 dR/dt = UsefulContribution(t) − λ × R(t)
 ```
-Status is **kinetic energy**, not stagnant capital. Stop moving — you burn down to the basic level.
-No one can buy themselves an eternal throne.
 
-#### 4. Anti-Cartel: Status Stasis with Slashing (v0.4)
-Long-horizon R&D (fusion, synthetic biology, quantum computing) is protected via **Status Escrow**:
+- **Status is kinetic energy, not potential**. Stop creating → you burn down to baseline
+- **No oligarchy**: You cannot buy, inherit, or delegate status
+- **No gerontocracy**: Category-specific λ ensures teachers retain status longer than athletes, but *everyone* decays without contribution
+- **High-Water Mark (HWM)**: Your peak achievement is immortalized in the Hall of Memory, but your *current* allocation power requires *current* creation
 
-- Researcher proposes project with horizon T (max 24 months)
-- Must gather **cross-domain peer stakes** (min 3 domains: e.g., Physics + Hardware + Biology)
-- Peers stake their R(t) + HWM as guarantee
-- During Stasis: decay λ_stasis → 0 (reputation frozen, lab access preserved)
-- **Success**: researcher gets ΔR delta; peers get stake returned + 10% discovery royalty
-- **Fraud/Abandonment**: progressive slashing — stake loss × collusion multiplier + HWM haircut (β = 10–20%)
-
-This prevents "eternal institutes of grift" while protecting genuine multi-year breakthroughs.
+**You cannot coast on past glory. But your glory is never forgotten.**
 
 ---
 
-## PART 4. THE SIMPLE IDEA: FLOOR ABSOLUTE, CEILING OPEN
+## PART 5. CYBERNETIC GOVERNANCE: OGAS 2.0 & FAULT-TOLERANT CODE
 
-We build a society where the **floor is absolute** and the **ceiling is open**.
+### How the Code Works Right Now
+The running system is a **heterogeneous, fail-closed stack**:
 
-### 1. Unconditional Base — Zero-Floor Guarantee
-Inside every Oasis, the fundamentals are **free and unconditional for everyone**:
+| Component | Language | Role |
+|-----------|----------|------|
+| `core-engine/graceful_degradation.py` | Python | **VSM + Soft Kalman**: ingests sensor telemetry, computes dynamic trust weights w∈[0,1], emits MaintenanceOrders |
+| `core-engine/status_stasis.py` | Python | **Status Escrow**: cross-domain peer staking, Gini anti-collusion, dual-layer slashing (stake + HWM) |
+| `core-engine/resource_balancer.rs` | Rust | **OGAS 2.0**: Leontief I/O matrix + GPU simplex for global resource distribution |
+| `iot-depin-network/telemetry_aggregator.go` | Go | **HTTP ingest**: validates SHA-256 payloads, timestamps, signatures → flushes to validator |
+| `iot-depin-network/firmware/*.cpp` | C++ | **ESP32 sensors**: ATECC608A-signed telemetry (air, water, soil, PAR, CO2) |
+| `validators/dispute_arbiter.py` | Python | **Optimistic consensus**: 7-day challenge window, jury decisions, oracle slashing |
 
-- **Food** — nutrient-dense, locally grown via automated vertical farms
-- **Housing** — clean, private, climate-stable living space
-- **Medicine** — highest-standard care, preventive and curative
-- **Education** — unlimited access to Schools of Universalists, AI-tutored trajectories
+### Resilience Against Sabotage: Soft Kalman + Synthetic State
+The v0.4 breakthrough: **The system never shuts down.**
 
-**Even if your reputation R(t) falls to zero, you are not cast out.** No one survives on the streets. No one is denied treatment. The system guarantees this floor through automation and zero-marginal-cost energy (Leontief matrix optimization). **Survival is not a privilege — it is the baseline.**
+```python
+# When a saboteur heats a temp sensor with a lighter (+40°C in 2 sec):
+# 1. Kalman innovation score → 15σ → weight w = exp(-0.8 × 13) ≈ 0.0
+# 2. Sensor weight drops to 0; Median filter ignores outlier (TMR: 3 sensors)
+# 3. SyntheticStateProvider kicks in: 14-day hourly diurnal baseline for temperature
+# 4. Cluster blends: X̂ = (Σ w_i·z_i + (1-W̄)·X_synthetic) / (Σ w_i + (1-W̄))
+# 5. Life support (ventilation, irrigation) continues on synthetic extrapolation
+# 6. MaintenanceOrder emitted: "Node #14 weight 0.00 → physical calibration required"
+```
 
-### 2. Right to Inaction & Dignified Aging
-The Zero-Floor Guarantee includes the **right to do nothing**. If a person chooses to spend their life gaming, reading, or simply existing — they have that right. They will not starve, freeze, or be denied care. They simply exist without influence on the world's trajectory.
+**Result**: The saboteur achieves only their own sensor's exclusion. The greenhouse keeps breathing. The Oasis keeps feeding people.
 
-Elders and those who have lost the capacity to create receive the **highest tier of care unconditionally**. The system does not measure human worth by output. It guarantees dignity because **dignity is not earned — it is inherent**.
+### Anti-Collusion: Gini Index in Status Stasis
+Scientific cartels (closed circles of mutual endorsement) are mathematically impossible:
 
-The algorithm is blind to race, religion, nationality, or parental connections. Only verified actions matter. Dogmas, sects, and tribal identities fade into irrelevance without violence — they simply become non-competitive in a system that rewards creation.
+```python
+# Minimum 3 domains required (e.g., Physics + Hardware + Biology)
+# Gini threshold 0.65: if 100% stake from one domain → EffectiveStake → 0
+EffectiveStake = Σ_d w_d × Stake_d × (1 − Gini(DomainDistribution))
 
-### 3. Equal Start — Anti-Nepotism by Design
-Reputation is **Soulbound — non-transferable, non-inheritable**. This means:
+# Fraud triggers progressive slashing:
+Slash_i = Stake_i × (1 + 0.5 × CollusionIndex)
+HWM_i_new = HWM_i_old × (1 − β)    # β = 10–20% HWM haircut
+```
 
-- Children of low-status parents and children of renowned scientists begin with **identical conditions**
-- Same schools, same doctors, same food, same access to tools
-- No trust funds, no legacy admissions, no inherited advantage
-- Every human earns their own status through their own creation
-
-The playing field is level by **cryptographic law, not political promise**.
-
-### 4. Status = Access to Creation Resources, Not Luxury
-High reputation (scientists, engineers, rescuers, builders) unlocks **capacity to create at scale**, not consumption:
-
-- **Space**: Larger habitats because you need a laboratory, workshop, or compute cluster
-- **Materials**: Priority allocation of rare resources (graphene, isotopes, quantum-grade silicon)
-- **Compute**: Access to quantum processors, orbital telescopes, planetary sensor arrays
-- **Coordination**: Authority to propose and lead large-scale Oasis infrastructure projects
-
-The daily experience differs minimally — everyone eats well, sleeps warm, learns freely. But the **scope of what you can bring into existence** differs by orders of magnitude. **Status is a lever for amplitude, not a badge for comfort.**
-
-### 5. Hierarchy of Impact: Science & Survival First
-Art and culture earn reputation and enrich the human experience. But the highest tier of resource access — orbital telescopes, quantum compute, rare isotopes, planetary-scale coordination — is reserved for those advancing **survival and expansion of the species**:
-
-- Fundamental physics & energy breakthroughs (fusion, ZPE, metamaterials)
-- Space infrastructure (orbital habitats, asteroid mining, propulsion)
-- Synthetic biology (designer organisms, carbon capture, pandemic defense)
-- AI alignment (provably beneficial superintelligence)
-- Planetary repair (atmospheric restoration, ocean de-acidification)
-
-A singer may live beautifully. A fusion engineer gets the reactor time. The system optimizes for **civilizational carrying capacity**, not entertainment markets.
-
-### 6. You Cannot Buy Power
-Reputation is strictly bound to **verified human action**. No markets, no delegation, no proxies. The system measures not the thickness of your wallet, but how much **warmth, cleanliness, and knowledge** you leave behind on Earth.
+**No eternal institutes of grift. No captured peer review.** To protect a 3-year fusion project, you must convince a biologist, a hardware engineer, and a logistics specialist to stake their *own* reputations.
 
 ---
 
-## PART 5. POST-IDEOLOGY: A LIVING PROTOCOL
+## PART 6. FUNDING & THE HALL OF FIRST AWAKENINGS
 
-**NEXUS is not communism, not socialism, not capitalism.** We reject all legacy "-isms". They are static answers to dynamic problems. The only constant in the universe is change. A system that stops evolving dies.
+### No Meme Coins. No VCs. No Speculation. Period.
+We **completely reject**:
+- Speculative token airdrops ("burn trash tokens for status")
+- Venture capital (exit pressure, data monetization, mission drift)
+- Governance tokens (plutocracy disguised as decentralization)
+- Any mechanism where money begets money without verified creation
 
-Our protocol is a **living, mutable framework** — not a finished utopia. Governance is:
+The PurgeContract experiment is **archived**. It introduced perverse incentives: speculators gaming the system, honeypot risks, regulatory exposure. **We learned. We moved on.**
 
-- **Algorithmic**: parameters encoded, not decreed
-- **Parameterizable**: weights, lambdas, thresholds adjustable via ZK-proven consensus
-- **Self-amending**: the Constitution is code; the Amendment process is a pull request with ZK-proven consensus
+### Pure Support: Direct Donations Only
+Development is funded **entirely through direct, voluntary Bitcoin donations**:
+
+**Bitcoin (BTC):** `bc1qlg5pxgqjyns59ma9hxter8vc2znh5tqtu4y777`
+
+No middlemen. No smart contract risk. No token volatility. **Pure signal: "I want this to exist."**
+
+### The Hall of First Awakenings: Immortalization, Not Investment
+Those who support the protocol in its foundational phase — before the first Oasis feeds its first thousand, before the first fusion reactor ignites, before mass adoption — are not "investors seeking ROI."
+
+**They are the First Awakened.**
+
+| What They Get | What It Means |
+|---------------|---------------|
+| **Name in Historical Centers** | Permanently inscribed in the physical Oases they helped birth |
+| **Digital Avatar** | Interactive AI reconstruction of their values, voice, vision — accessible to every child in the Schools of Universalists |
+| **HWM Recognition** | Their peak reputation (HWM) marked with "Founding Supporter" provenance |
+| **Governance Voice** | Lifetime weighted input on protocol parameter changes (advisory, not control) |
+
+**This is not a reward. This is recognition.** They saw the future when it was invisible. They chose to build it when building was irrational. Their memory becomes part of the civilization's immune system — a permanent reminder that *one person's courage can break the matrix.*
 
 ---
 
-## PART 6. REPUTATION MEMORY: THE HIGH-WATER MARK
-
-The thermodynamic decay `dR/dt = UsefulContribution(t) − λ × R(t)` governs *kinetic* status — your current capacity to command resources. But the system maintains a second, immutable ledger: the **High-Water Mark (HWM)**.
-
-- **Kinetic Reputation R(t)** — decays when you stop creating. Determines current resource allocation.
-- **High-Water Mark HWM** — the peak reputation you ever achieved. **Never decays. Never deleted.**
-
-If you once saved a city, your R(t) may fall to baseline years later. But your name remains in the **Hall of Memory** at its peak. Future generations query the HWM ledger to know who moved the needle.
-
-**Kinetic status is for the living. Historical memory is for the species.**
-
-This dual-ledger design prevents gerontocracy *and* erasure. You cannot coast on past glory. But your glory is never forgotten.
-
----
-
-## PART 7. V0.4 ARCHITECTURAL MATRIX: THREATS & COUNTERMEASURES
+## PART 7. THE ARCHITECTURAL MATRIX: 12 VECTORS, 12 COUNTERMEASURES
 
 | Vector | Threat | Module | v0.4 Innovation |
 |--------|--------|--------|-----------------|
@@ -278,19 +306,7 @@ If W̄ < 0.3 → emit MaintenanceOrder, synthetic fallback dominant
 
 ---
 
-## PART 9. THE HALL OF FIRST AWAKENINGS
-
-Those who support the protocol in its earliest, darkest hours — before mass adoption, before institutional validation, before the first Oasis feeds its first thousand — are not "investors seeking ROI."
-
-They are the **First Awakened**.
-
-Their names, digital contributions, and interactive AI avatars will be **permanently enshrined in the Historical Centers of the First Oases**, preserving their memory as the pioneers who broke the matrix and birthed a new civilization.
-
-**This is not a reward. This is recognition of those who saw the future and chose to build it.**
-
----
-
-## PART 10. ABOUT US
+## PART 9. ABOUT US
 
 We are not a lone coder in a basement.
 We are a fellowship of **thinkers, engineers, teachers, builders, rescuers, farmers, medics, artists, scientists**.

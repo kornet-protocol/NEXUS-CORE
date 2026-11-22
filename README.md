@@ -6,34 +6,36 @@
 
 **NEXUS** is an open-source, decentralized operating system for planetary repair, resource balancing, and the emergence of a post-scarcity civilization. We replace political bureaucracy with cybernetic logistics (**OGAS 2.0**) and speculative capitalism with a **Phase Economy** where value derives solely from verified physical creation.
 
----
-
-## 🎯 The Vision
-
-We are building a global P2P infrastructure where **creation** — saving lives, restoring ecosystems, achieving scientific breakthroughs, building infrastructure, transmitting knowledge — becomes the **sole generator of value**. NEXUS connects:
-
-- **DePIN** (Decentralized Physical Infrastructure Networks) — environmental sensors, energy grids, manufacturing nodes
-- **AI Oracle Verification** — federated neural governance (Production Optimizer, Education Neural Net, Resource Balancer, Infrastructure Sentinel)
-- **Zero-Knowledge Proofs** — cryptographic privacy preserving human dignity
-- **Status Escrow & Research Stasis** — protecting long-horizon R&D from reputational decay
+> **The Core Insight:** You cannot build a sane civilization with damaged minds in a scarcity trap. NEXUS simultaneously solves the *material crisis* (energy, food, shelter) and the *psychological crisis* (trauma, fragmentation, survival anxiety) through a unified protocol of automated abundance and ambidextrous education.
 
 ---
 
-## 📊 v0.4 Status
+## 🎯 The Vision: Why We Exist
 
-This repository provides a **fail-closed prototype** with mathematically specified, tested, and deployable components:
+We are building a global P2P infrastructure where **creation** — saving lives, restoring ecosystems, achieving scientific breakthroughs, building infrastructure, transmitting knowledge, raising children — becomes the **sole generator of value**. NEXUS connects:
+
+| Layer | Technology | Purpose |
+|-------|------------|---------|
+| **DePIN** | Environmental sensors, energy grids, manufacturing nodes | Measure physical reality, not human behavior |
+| **AI Oracle** | Federated neural governance (PROMT, OBRAZ, OGAS, STRAZH) | Optimize production, education, logistics, infrastructure |
+| **ZK-Privacy** | zk-SNARKs (arkworks/Groth16/BN254) | Prove deeds without exposing identity |
+| **Status Escrow** | Cross-domain stasis with slashing | Protect multi-year R&D from reputational decay |
+
+---
+
+## 📊 v0.4 Status: Fail-Closed Prototype
 
 | Layer | Status | Key Modules |
 |-------|--------|-------------|
-| **Core Engine (Python + Rust)** | ✅ Tested | Genesis Protocol, Reputation Decay, Entropy Filter, Graceful Degradation v0.4 (Soft Kalman + Synthetic State), Status Stasis, Resource Balancer (Leontief), Proof-of-Assembly, Skill Tree |
-| **Identity & ZKP (Rust/arkworks)** | 🏗️ Scaffold | Web of Trust (Sybil resistance), ZK-SNARK circuit (GoodDeedCircuit) — requires trusted setup ceremony |
-| **Validators (Python)** | ✅ Tested | Dispute Arbiter (7-day challenge window), Eco-Bio Vision, Infrastructure Scan, Science Peer Review, Social Awakening |
-| **Smart Contracts (Solidity)** | ✅ Compiled | PurgeContract (DEX aggregation + honeypot detection), FoundingPurger SBT, SoulboundToken (on-chain decay) |
-| **IoT / DePIN (C++ / Go / ESP32)** | ✅ Compiled | Air/Water/Soil sensor firmware (ATECC608A-signed), LoRa Mesh (SX1262), Telemetry Aggregator (Go HTTP) |
-| **Hardware Spec** | ✅ Documented | `docs/hardware/BOM_oasis_seed.md` — $1,500 Seed Node with 3× TMR sensor redundancy |
+| **Core Engine (Python + Rust)** | ✅ Tested | Genesis Protocol, Reputation Decay, Entropy Filter, **Graceful Degradation v0.4 (Soft Kalman + Synthetic State)**, **Status Stasis**, Resource Balancer (Leontief), Proof-of-Assembly, Skill Tree |
+| **Identity & ZKP (Rust/arkworks)** | 🏗️ Scaffold | Web of Trust (Sybil resistance), ZK-SNARK circuit — requires trusted setup ceremony |
+| **Validators (Python)** | ✅ Tested | Dispute Arbiter (7-day challenge), Eco-Bio Vision, Infrastructure Scan, Science Peer Review, Social Awakening |
+| **Smart Contracts (Solidity)** | ✅ Compiled | SoulboundToken (on-chain decay), DEX Adapters — *PurgeContract archived* |
+| **IoT / DePIN (C++ / Go / ESP32)** | ✅ Compiled | Air/Water/Soil firmware (ATECC608A-signed), LoRa Mesh (SX1262), Telemetry Aggregator (Go HTTP) |
+| **Hardware Spec** | ✅ Documented | `docs/hardware/BOM_oasis_seed.md` — $1,500 Seed Node with 3× TMR redundancy |
 | **Documentation** | ✅ Complete | Mathematical models, AI Core, Osmotic Membrane, Schools of Universalists, Guerrilla Manufacturing, Ambidexter Academy |
 
-**Production use requires:** audited ZK verifiers, hardware-key registry (HSM/KMS), audited DEX adapter, and formal verification of consensus protocol.
+**Production requires:** audited ZK verifiers, hardware-key registry (HSM/KMS), audited DEX adapter, formal verification of consensus.
 
 ---
 
@@ -41,7 +43,7 @@ This repository provides a **fail-closed prototype** with mathematically specifi
 
 ### 1. Proof-of-Good & Environmental Proof-of-Impact
 Physical actions (planting trees, building hospitals, cleaning rivers, restoring soil) are verified via **cryptographic signatures from IoT environmental sensors** (air, water, soil, energy) using **ATECC608A Secure Element**. This prevents Deepfake/Generative AI spoofing of sensor data.  
-**No human biometrics. No cameras on people.**
+**No human biometrics. No cameras on people. Ever.**
 
 ### 2. Dynamic Reputation Decay R(t) — Thermodynamics of Status
 Status is a **Soulbound Token (SBT)** — non-transferable, non-inheritable, non-speculative. It follows the thermodynamic law:
@@ -55,7 +57,7 @@ dR/dt = UsefulContribution(t) − λ × R(t)
 - **High-Water Mark (HWM)**: immutable peak reputation ledger — never decays, never deleted
 
 ### 3. ZK-Privacy (Zero-Knowledge Proofs)
-We do not build a Panopticon. Users prove actions and identity via **zk-SNARKs** (arkworks/Groth16/BN254). The system verifies the deed without revealing GPS coordinates, real name, or face.
+We do not build a Panopticon. Users prove actions and identity via **zk-SNARKs**. The system verifies the deed without revealing GPS coordinates, real name, or face.
 
 ### 4. Mesh-Network Autonomy
 Protocol survives internet shutdowns. IoT sensors and Oasis nodes communicate via **LoRaWAN (SX1262) / Libp2p / Bluetooth Mesh** — physical survival floor remains operational offline.
@@ -111,7 +113,7 @@ Protocol survives internet shutdowns. IoT sensors and Oasis nodes communicate vi
 - **50,000 garages worldwide** — no central factory to bomb/arrest
 - **Stealth logistics**: components declared as "Educational STEM kits"
 - **Proof-of-Assembly**: ATECC608A attestation + BOM hash match + mesh handshake → assembler earns Karma + stable
-- **Self-funding**: PurgeContract treasury pays for components
+- **Self-funding**: Treasury pays for components
 
 ### Ambidexter Academy — RPG IRL Skill Tree
 `docs/ambidexter_academy.md` + `core-engine/skill_tree.py`:
@@ -148,14 +150,14 @@ NEXUS-CORE/
 ├── identity-zkp/          # Web of Trust (Python) + ZK-SNARK Circuit (Rust/arkworks)
 ├── validators/            # Dispute Arbiter, Eco-Bio Vision, Infrastructure Scan,
 │                          # Science Peer Review, Social Awakening
-├── smart-contracts/       # PurgeContract, FoundingPurger SBT, SoulboundToken, DEX Adapters
+├── smart-contracts/       # SoulboundToken, FoundingPurger SBT, DEX Adapters
 ├── iot-depin-network/     # Firmware (air/water/soil sensors, LoRa mesh), Aggregator (Go)
 ├── docs/                  # Mathematical models, AI Core, Osmotic Membrane,
 │                          # Schools of Universalists, Guerrilla Manufacturing,
 │                          # Ambidexter Academy, Phase Decay Math, Threat Model, Audit Checklist
 │   └── hardware/
 │       └── BOM_oasis_seed.md  # $1,500 Seed Node spec with 3× TMR
-├── scripts/               # Deployment automation (legacy PurgeContract deploy)
+├── scripts/               # Deployment automation
 ├── tests/                 # 49 unit tests: security boundaries, event attestation,
 │                          # status stasis (14), graceful degradation (18)
 ├── app-frontend/          # UI (Skill Tree, Guilds), AR Engine
