@@ -13,7 +13,7 @@
 - **Power Management (SBC):** 12V to 5V 5A Step-down DC-DC buck converter (Mean Well or LM2596 HV) with low ripple. ~$20
 
 ### 2. Cryptographic Security Layer (~$15)
-- **Hardware Root of Trust:** Microchip ATECC608A-TNGTLS / ATECC608B (SOIC-8 breakout via I2C). 
+- **Hardware Root of Trust:** Microchip ATECC608A-TNGTLS / ATECC608B (SOIC-8 breakout via I2C).
   - *Function:* Cryptographic signing of telemetry frames and Proof-of-Assembly handshake.
   - *Unit Cost:* ~$1.20/chip. 5 units for cluster nodes = ~$6.
 - **I2C Bus Isolator & Pull-ups:** PCA9306 level translator + I2C noise filter for long wire runs. ~$9

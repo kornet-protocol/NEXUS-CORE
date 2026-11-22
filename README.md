@@ -4,106 +4,175 @@
 
 # NEXUS: The KORNET Core Protocol
 
-**NEXUS** is an open-source, decentralized operating system for planetary repair, resource balancing, and gamified volunteering. We replace political bureaucracy with cybernetic logistics (OGAS 2.0) and speculative capitalism with a Phase Economy.
+**NEXUS** is an open-source, decentralized operating system for planetary repair, resource balancing, and the emergence of a post-scarcity civilization. We replace political bureaucracy with cybernetic logistics (**OGAS 2.0**) and speculative capitalism with a **Phase Economy** where value derives solely from verified physical creation.
+
+---
 
 ## 🎯 The Vision
 
-We are building a global P2P infrastructure where creation (saving lives, ecological restoration, scientific breakthroughs) becomes the sole generator of value. Nexus connects DePIN (Decentralized Physical Infrastructure), AI Oracle Verification, and Zero-Knowledge Proofs to create a trustless ecosystem for human evolution.
+We are building a global P2P infrastructure where **creation** — saving lives, restoring ecosystems, achieving scientific breakthroughs, building infrastructure, transmitting knowledge — becomes the **sole generator of value**. NEXUS connects:
 
-## v0.2 Status
+- **DePIN** (Decentralized Physical Infrastructure Networks) — environmental sensors, energy grids, manufacturing nodes
+- **AI Oracle Verification** — federated neural governance (Production Optimizer, Education Neural Net, Resource Balancer, Infrastructure Sentinel)
+- **Zero-Knowledge Proofs** — cryptographic privacy preserving human dignity
+- **Status Escrow & Research Stasis** — protecting long-horizon R&D from reputational decay
 
-The repository currently provides a stable, fail-closed prototype. Python, Rust, Go, Solidity, and ESP32 firmware checks are wired into the development workflow. Unconfigured ZK, hardware-attestation, and DEX adapters reject requests instead of accepting unverifiable data or silently discarding funds. Production use still requires audited cryptographic verifiers, a hardware-key registry, and an audited DEX adapter.
+---
 
-## ⚙️ Core Architecture (The 4 Vectors of Resilience)
+## 📊 v0.4 Status
 
-1. **Proof-of-Good & Environmental Proof-of-Impact:** Physical actions (planting trees, building infrastructure, cleaning rivers) are verified via cryptographic signatures from IoT environmental sensors (air, water, soil, energy) using ATECC608A Secure Element — preventing Deepfake/Generative AI spoofing of sensor data. **No human biometrics. No cameras on people.**
-2. **Dynamic Reputation Decay ($R(t)$):** Status is a Soulbound Token (SBT) that cannot be bought or transferred. It exponentially decays over time if a user stops contributing, eliminating the risk of "digital oligarchy."
-3. **ZK-Privacy (Zero-Knowledge Proofs):** We do not build a Panopticon. Users prove their actions and identity using zk-SNARKs. The system verifies the good deed without revealing the user's GPS coordinates, real name, or face.
-4. **Mesh-Network Autonomy:** The protocol is designed to survive internet shutdowns. IoT sensors and Oasis nodes communicate via LoRaWAN/Libp2p, ensuring the physical survival floor remains operational offline.
+This repository provides a **fail-closed prototype** with mathematically specified, tested, and deployable components:
 
-## 🧬 Systemic Extensions (Day 0+)
+| Layer | Status | Key Modules |
+|-------|--------|-------------|
+| **Core Engine (Python + Rust)** | ✅ Tested | Genesis Protocol, Reputation Decay, Entropy Filter, Graceful Degradation v0.4 (Soft Kalman + Synthetic State), Status Stasis, Resource Balancer (Leontief), Proof-of-Assembly, Skill Tree |
+| **Identity & ZKP (Rust/arkworks)** | 🏗️ Scaffold | Web of Trust (Sybil resistance), ZK-SNARK circuit (GoodDeedCircuit) — requires trusted setup ceremony |
+| **Validators (Python)** | ✅ Tested | Dispute Arbiter (7-day challenge window), Eco-Bio Vision, Infrastructure Scan, Science Peer Review, Social Awakening |
+| **Smart Contracts (Solidity)** | ✅ Compiled | PurgeContract (DEX aggregation + honeypot detection), FoundingPurger SBT, SoulboundToken (on-chain decay) |
+| **IoT / DePIN (C++ / Go / ESP32)** | ✅ Compiled | Air/Water/Soil sensor firmware (ATECC608A-signed), LoRa Mesh (SX1262), Telemetry Aggregator (Go HTTP) |
+| **Hardware Spec** | ✅ Documented | `docs/hardware/BOM_oasis_seed.md` — $1,500 Seed Node with 3× TMR sensor redundancy |
+| **Documentation** | ✅ Complete | Mathematical models, AI Core, Osmotic Membrane, Schools of Universalists, Guerrilla Manufacturing, Ambidexter Academy |
 
-### Graceful Degradation (Viable System Model)
+**Production use requires:** audited ZK verifiers, hardware-key registry (HSM/KMS), audited DEX adapter, and formal verification of consensus protocol.
 
-Every local node must survive total isolation. `core-engine/graceful_degradation.py` implements:
+---
 
-- **Kalman Filter** for anomaly detection in sensor streams
-- **Historical baselines** for deterministic extrapolation during adversarial attacks
-- **Island Mode**: local clusters switch to autonomous Leontief matrix + Raft/Tendermint consensus when global network fails
+## ⚙️ Core Architecture: The 4 Vectors of Resilience
 
-### Entropy Filter (Thermodynamics of Status)
+### 1. Proof-of-Good & Environmental Proof-of-Impact
+Physical actions (planting trees, building hospitals, cleaning rivers, restoring soil) are verified via **cryptographic signatures from IoT environmental sensors** (air, water, soil, energy) using **ATECC608A Secure Element**. This prevents Deepfake/Generative AI spoofing of sensor data.  
+**No human biometrics. No cameras on people.**
 
-Status is kinetic energy, not potential. `core-engine/entropy_filter.py` implements:
+### 2. Dynamic Reputation Decay R(t) — Thermodynamics of Status
+Status is a **Soulbound Token (SBT)** — non-transferable, non-inheritable, non-speculative. It follows the thermodynamic law:
 
-- **dR/dt = UsefulContribution(t) - λ * R(t)**
-- Category-specific decay rates (life_saved: 0.0001, art_created: 0.003, sports: 0.004)
-- **Anti-gerontocracy mechanism**: reputations decay, clearing space for new minds
-- **Creative/Sports/Utilitarian balance** tracking
+```
+dR/dt = UsefulContribution(t) − λ × R(t)
+```
 
-### Osmotic Membrane (Legacy Integration)
+- **Category-specific λ**: life_saved (0.0001), teaching (0.0004), art (0.003), sports (0.004)
+- **Anti-gerontocracy**: reputation decays, clearing space for new minds
+- **High-Water Mark (HWM)**: immutable peak reputation ledger — never decays, never deleted
 
-Oases act as cells with semi-permeable membranes. `docs/osmotic_membrane.md` describes:
+### 3. ZK-Privacy (Zero-Knowledge Proofs)
+We do not build a Panopticon. Users prove actions and identity via **zk-SNARKs** (arkworks/Groth16/BN254). The system verifies the deed without revealing GPS coordinates, real name, or face.
 
-- **Trade & Treasury Gateway**: export cheap energy/robotics, import raw materials
-- **Economic dumping**: 50-80% below market price due to elimination of speculative margins
-- **Phase transition**: external enterprises self-integrate into KORNET to access stable logistics and clean energy
+### 4. Mesh-Network Autonomy
+Protocol survives internet shutdowns. IoT sensors and Oasis nodes communicate via **LoRaWAN (SX1262) / Libp2p / Bluetooth Mesh** — physical survival floor remains operational offline.
 
-### AI Core (Neural Governance)
+---
 
-`docs/ai_core.md` describes 4 federated neural networks:
+## 🧬 Systemic Extensions (v0.4 Canonical)
 
-- **Production Optimizer**: maximizes output, minimizes input via Leontief constraints
-- **Education Neural Net**: personalized learning trajectories based on ambidexterity profiles
-- **Resource Balancer**: GPU-accelerated simplex optimization for global resource distribution
-- **Infrastructure Sentinel**: anomaly detection + predictive maintenance + threat assessment
+### Graceful Degradation v0.4 — Soft Kalman Weights + Synthetic State
+`core-engine/graceful_degradation.py` implements **Stafford Beer's Viable System Model** with **continuous trust weights w ∈ [0,1]**:
 
-### Schools of Universalists
+- **Innovation-based anomaly scoring**: normalized Kalman residual → exponential weight decay `w = exp(−γ·(score−2))` for 2σ < score ≤ 5σ
+- **SyntheticStateProvider**: 14-day hourly diurnal baselines per metric (temp, humidity, pH, PAR) — deterministic fallback when sensor cluster degrades
+- **Zero DoS**: system **never shuts down** — gracefully blends sensor readings with synthetic extrapolation
+- **MaintenanceOrder queue**: async work orders for physical calibration emitted when cluster weight W̄ < 0.3
 
-`docs/schools_of_universalists.md` — education system for post-scarcity minds:
+### Status Stasis & Research Escrow — Protecting Long-Horizon R&D
+`core-engine/status_stasis.py` implements **Status Escrow** for multi-year scientific/engineering cycles:
 
-- **Ambidexterity focus**: synchronized left/right hemisphere development
-- **No grades, no standardized tests**: Skill Graph + Karma Index + Creativity Score
-- **3 phases**: Seed (0-12), Forge (12-18), Nexus Academy (18+)
-- Goal: humans who can fix engines, write symphonies, program neural nets, and grow gardens
+- **Cross-Domain Gini Anti-Collusion**: minimum 3 independent domains (Biology + Energy + Hardware); Gini threshold 0.65
+- **Peer Stake Collusion Penalties**: backers stake R(t) + HWM; fraud triggers progressive slashing `multiplier = 1 + 0.5×CollusionIndex`
+- **Dual-Layer Slashing**: Lead HWM cut (2×β), Peer HWM cut (1×β), Stake loss multiplied by collusion index
+- **Hard Cap**: 24 months maximum; no extension without Milestone Proof audit
 
-### Guerrilla Manufacturing (Decentralized Micro-Factories)
+### Entropy Filter — Thermodynamics of Status
+`core-engine/entropy_filter.py` — status as kinetic energy, not potential:
+- Category-specific decay rates with half-life calculations
+- Gerontocracy risk detection (inactivity > threshold years)
+- Creative/Sports/Utilitarian balance tracking
 
-No central factory to bomb or arrest. `docs/guerilla_manufacturing.md` + `core-engine/proof_of_assembly.py`:
+### Osmotic Membrane — Legacy Integration
+`docs/osmotic_membrane.md` — Oases as cells with semi-permeable membranes:
+- **Export**: energy, roboticized production, open patents at pure cost (50–80% below market)
+- **Import**: raw materials, expertise (transition phase only)
+- **Phase Transition**: Islands → Oases → Clusters → Core Activation
 
+### AI Core — Neural Governance (Federated)
+`docs/ai_core.md` — 4 federated neural networks with ZK-proven training:
+- **PROMT** (Production Optimizer) — Leontief-constrained PID setpoints
+- **OBRAZ** (Education Neural Net) — ambidexterity-based personalized trajectories
+- **OGAS** (Resource Balancer) — GPU-accelerated simplex for global distribution
+- **STRAZH** (Infrastructure Sentinel) — Isolation Forest + Cox survival analysis
+
+### Schools of Universalists — Education for Freedom
+`docs/schools_of_universalists.md` + `validators/social_awakening.py`:
+- **No grades, no standardized tests** — Skill Graph + Karma Index + Creativity Score
+- **3 Phases**: Seed (0–12), Forge (12–18), Nexus Academy (18+)
+- **Ambidexterity Foundation**: rhythmic gymnastics 2×/day, synchronized left/right hemisphere development
+- **Goal**: humans who fix engines, write symphonies, program neural nets, grow gardens
+
+### Guerrilla Manufacturing — Decentralized Micro-Factories
+`docs/guerilla_manufacturing.md` + `core-engine/proof_of_assembly.py`:
+- **50,000 garages worldwide** — no central factory to bomb/arrest
 - **Stealth logistics**: components declared as "Educational STEM kits"
-- **Assembly Guilds**: 50,000 garages worldwide solder NEXUS hardware from open schematics
-- **Proof-of-Assembly**: device attests ATECC608A chip, signs mesh handshake, assembler earns Karma + stable
-- Result: an army of "kulibins" manufacturing the eyes and ears of the system
+- **Proof-of-Assembly**: ATECC608A attestation + BOM hash match + mesh handshake → assembler earns Karma + stable
+- **Self-funding**: PurgeContract treasury pays for components
 
-### Ambidexter Academy (RPG IRL Skill Tree)
-
+### Ambidexter Academy — RPG IRL Skill Tree
 `docs/ambidexter_academy.md` + `core-engine/skill_tree.py`:
+- **Skill Branches**: Bio-Engineering, Quantum Logistics, Neuro-Architecture (Left) / Music, Sculpture, Poetry, Empathy (Right)
+- **Synthesis Multiplier ×5**: cross-hemisphere links unlock exponential status growth
+- **Master-Teacher Royalties**: 10% of student's lifetime status — teaching geniuses becomes most profitable act on Earth
 
-- **Skill Tree**: branches are Bio-Engineering, Quantum Logistics, Neuro-Architecture — not "Math" or "Lit"
-- **Synthesis Multiplier**: single-skill grinding grows status slowly; cross-hemisphere synthesis makes R(t) skyrocket
-- **Master-Teacher Royalties**: mentors earn 10% of student's lifetime status — teaching geniuses becomes the most profitable act on Earth
+---
 
-## 🚀 Osmotic Funding (Funding Mechanism)
+## 💰 Funding Paradigm: Pure Donations & The Hall of First Awakenings
 
-We don't ask VCs for money. We use the degeneracy of the old system against itself:
-users burn their worthless meme coins through our **Purge Contract** and receive **Founding Purger SBT** — a soulbound badge that grants priority access to Oasis infrastructure.
+### No Memecoins. No VCs. No Speculation.
+We **completely reject** speculative tokenomics, "osmotic airdrops" of trash tokens, and venture capital capture. The PurgeContract mechanism has been **archived** as a historical experiment — it introduced perverse incentives contrary to our values.
+
+### Pure Support
+Development is funded **entirely through direct, voluntary donations**:
+
+**Bitcoin (BTC):** `bc1qlg5pxgqjyns59ma9hxter8vc2znh5tqtu4y777`
+
+### The Hall of First Awakenings (Immortalization)
+Those who support the protocol in its earliest, darkest hours — before mass adoption, before institutional validation — are not "investors seeking ROI." They are the **First Awakened**.
+
+Their names, digital contributions, and interactive AI avatars will be **permanently enshrined in the Historical Centers of the First Oases**, preserving their memory as the pioneers who broke the matrix and birthed a new civilization.
+
+---
 
 ## 📁 Repository Map
 
-- `/core-engine` - Genesis Protocol, Reputation Decay, Entropy Filter, Graceful Degradation, Resource Balancer, Proof-of-Assembly, Skill Tree, config
-- `/identity-zkp` - Sybil-resistance and privacy layers
-- `/validators` - AI and peer-review Oracle mechanisms
-- `/smart-contracts` - Purge Contract + Founding Purger SBT
-- `/iot-depin-network` - Firmware for offline Mesh grids
-- `/docs` - Mathematical models, AI Core, Osmotic Membrane, Schools, Guerrilla Manufacturing, Ambidexter Academy
-- `/scripts` - Deployment automation
+```
+NEXUS-CORE/
+├── core-engine/           # Genesis Protocol, Reputation Decay, Entropy Filter,
+│                          # Graceful Degradation v0.4, Status Stasis, Resource Balancer (Rust),
+│                          # Proof-of-Assembly, Skill Tree, Config, Persistence, Logging, Serve
+├── identity-zkp/          # Web of Trust (Python) + ZK-SNARK Circuit (Rust/arkworks)
+├── validators/            # Dispute Arbiter, Eco-Bio Vision, Infrastructure Scan,
+│                          # Science Peer Review, Social Awakening
+├── smart-contracts/       # PurgeContract, FoundingPurger SBT, SoulboundToken, DEX Adapters
+├── iot-depin-network/     # Firmware (air/water/soil sensors, LoRa mesh), Aggregator (Go)
+├── docs/                  # Mathematical models, AI Core, Osmotic Membrane,
+│                          # Schools of Universalists, Guerrilla Manufacturing,
+│                          # Ambidexter Academy, Phase Decay Math, Threat Model, Audit Checklist
+│   └── hardware/
+│       └── BOM_oasis_seed.md  # $1,500 Seed Node spec with 3× TMR
+├── scripts/               # Deployment automation (legacy PurgeContract deploy)
+├── tests/                 # 49 unit tests: security boundaries, event attestation,
+│                          # status stasis (14), graceful degradation (18)
+├── app-frontend/          # UI (Skill Tree, Guilds), AR Engine
+└── assets/                # Logo, branding
+```
+
+---
 
 ## 🤝 Join the Architecture
 
-We need Rust/Go engineers, cryptographers, AI vision specialists, hardware makers, and educators.
+We need **Rust/Go engineers**, **cryptographers**, **AI vision specialists**, **hardware makers**, **educators**, **farmers**, **medics**, **builders**.
+
 Read `CONTRIBUTING.md` and choose your vector.
 
-*The future is not a place we are going to, but one we are creating.*
+> *The future is not a place we are going to, but one we are creating.*
+
+---
 
 ## 💎 Support the Architecture
 
